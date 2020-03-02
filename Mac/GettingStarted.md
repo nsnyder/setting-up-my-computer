@@ -18,4 +18,4 @@ This is my preferred font for programming. To install it, follow the instruction
 ### Menlo for Powerline
 
 Menlo for Powerline is necessary to get all the desired affects when running
-[Powerline](#Programming.md#Powerline) in the terminal. Get it [here](https://github.com/abertsch/Menlo-for-Powerline).
+[Powerline](Programming.md#Powerline) in the terminal. Get it [here](https://github.com/abertsch/Menlo-for-Powerline).

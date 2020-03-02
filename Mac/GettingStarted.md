@@ -7,3 +7,15 @@ when you start up your Mac.
 The first thing to install on Mac OS is install [Brew](https://brew.sh).
 The instructions should be available on the website. Most other things on
 Mac will be installed through Brew.
+
+## Fonts
+
+### Fira Code
+
+This is my preferred font for programming. To install it, follow the instructions
+[here](https://github.com/tonsky/FiraCode/wiki/Installing).
+
+### Menlo for Powerline
+
+Menlo for Powerline is necessary to get all the desired affects when running
+[Powerline](#Programming.md#Powerline) in the terminal. Get it [here](https://github.com/abertsch/Menlo-for-Powerline).

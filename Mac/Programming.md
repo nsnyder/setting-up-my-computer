@@ -2,6 +2,10 @@
 
 This file should contain a variety of setups that I use for programming.
 
+## Powerline
+
+TODO: Update this the next time I install Powerline.
+
 ## SSH
 
 To configure Mac OS to

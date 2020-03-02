@@ -15,7 +15,7 @@ brew install eye-d3
 
 The main thing I keep it for is
 [removing unnecessary DRM frames](https://www.calvinallen.net/remove-drm-from-google-play-music/)
-from .mp3 files.
+from .mp3 files, like the DRM on Google Play Music purchases.
 You can do this like so:
 
 ```

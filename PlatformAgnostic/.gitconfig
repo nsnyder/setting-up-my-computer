@@ -1,0 +1,7 @@
+[color]
+	ui = true
+[commit]
+	gpgsign = true
+[user]
+	signingkey = KEY_GOES_HERE
+	email = nathan@snydern.com

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../setting-up-my-computer/.idea/commands-worth-remembering.iml" filepath="$PROJECT_DIR$/../setting-up-my-computer/.idea/commands-worth-remembering.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/commands-worth-remembering.iml" filepath="$PROJECT_DIR$/.idea/commands-worth-remembering.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/setting-up-my-computer.iml" filepath="$PROJECT_DIR$/.idea/setting-up-my-computer.iml" />
     </modules>
   </component>
 </project>

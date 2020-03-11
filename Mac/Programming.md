@@ -2,9 +2,40 @@
 
 This file should contain a variety of setups that I use for programming.
 
+## Pip
+
+Pip can be installed with [get-pip.py](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+rm get-pip.py
+```
+
 ## Powerline
 
-TODO: Update this the next time I install Powerline.
+First install [Pip](#pip) (above). Then do as follows:
+
+```
+pip install --user powerline-status
+pip install --user powerline-gitstatus
+```
+
+Add these lines to `~/.bash_profile`:
+
+```
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /Users/nathan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+```
+
+The final line can be gotten by running `pip show powerline-status` and then
+using the `Location`  field, with everything past `site-packages`.
+
+You will need to restart Terminal.app after installation.
+
+#### References:
+[How to Jazz Up Your Bash Terminal — A Step By Step Guide With Pictures](https://www.freecodecamp.org/news/jazz-up-your-bash-terminal-a-step-by-step-guide-with-pictures-80267554cb22/)
 
 ## SSH
 
@@ -15,3 +46,5 @@ run this command:
 ```
 ssh-add -K ~/.ssh/[your-private-key]
 ```
+
+Next, copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.

@@ -19,3 +19,11 @@ This is my preferred font for programming. To install it, follow the instruction
 
 Menlo for Powerline is necessary to get all the desired affects when running
 [Powerline](Programming.md#powerline) in the terminal. Get it [here](https://github.com/abertsch/Menlo-for-Powerline).
+
+## Karabiner Elements
+
+Install Karabiner-Elements with:
+
+`brew cask install karabiner-elements`
+
+Add the `karabiner.json` from this file to `~/.config/karabiner`, and you're good to go!

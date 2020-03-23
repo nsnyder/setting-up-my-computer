@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec4f149-54bf-4ae4-bc03-7d9197229f37" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Raspbian/GettingStarted.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Mac/karabiner.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Raspbian/.lastcast.toml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Raspbian/lastcast.service" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mac/GettingStarted.md" afterPath="$PROJECT_DIR$/Mac/GettingStarted.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mac/Programming.md" afterPath="$PROJECT_DIR$/Mac/Programming.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Raspbian/GettingStarted.md" afterPath="$PROJECT_DIR$/Raspbian/GettingStarted.md" />
     </list>
     <ignored path="commands-worth-remembering.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,16 +30,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="GettingStarted.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Raspbian/GettingStarted.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="336">
-                <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Mac/GettingStarted.md">
           <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
@@ -48,6 +40,15 @@
               <second_editor>
                 <js_state />
               </second_editor>
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="448">
+                <caret line="28" column="88" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -66,8 +67,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/PlatformAgnostic/.gitconfig" />
         <option value="$PROJECT_DIR$/Mac/Media.md" />
-        <option value="$PROJECT_DIR$/Mac/GettingStarted.md" />
         <option value="$PROJECT_DIR$/Mac/Programming.md" />
+        <option value="$PROJECT_DIR$/Raspbian/.lastcast.toml" />
+        <option value="$PROJECT_DIR$/Raspbian/lastcast.service" />
+        <option value="$PROJECT_DIR$/Mac/GettingStarted.md" />
         <option value="$PROJECT_DIR$/Raspbian/GettingStarted.md" />
       </list>
     </option>
@@ -78,11 +81,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="812" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -109,6 +114,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -171,9 +179,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
       <pane id="Scratches" />
     </panes>
   </component>
@@ -183,6 +188,12 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Mac" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -219,6 +230,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1ec4f149-54bf-4ae4-bc03-7d9197229f37" name="Default" comment="" />
@@ -228,15 +242,19 @@
       <updated>1583104031867</updated>
       <workItem from="1583104033580" duration="6058000" />
       <workItem from="1583883238607" duration="44000" />
-      <workItem from="1583883314208" duration="1614000" />
+      <workItem from="1583883314208" duration="4856000" />
+      <workItem from="1584494736163" duration="77000" />
+      <workItem from="1584653976140" duration="283000" />
+      <workItem from="1584659320012" duration="78000" />
+      <workItem from="1584928726093" duration="585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7716000" />
+    <option name="totallyTimeSpent" value="11981000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="812" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -258,6 +276,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -266,67 +292,95 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Raspbian/lastcast.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raspbian/lastcast.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raspbian/lastcast.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raspbian/lastcast.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Mac/Programming.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="336">
             <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mac/Programming.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="592">
-            <caret line="37" column="183" selection-start-line="37" selection-start-column="182" selection-end-line="37" selection-end-column="183" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
       <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor>
             <js_state />
           </second_editor>
         </state>
       </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="592">
+            <caret line="37" column="183" selection-start-line="37" selection-start-column="182" selection-end-line="37" selection-end-column="183" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="96">
             <caret line="6" column="66" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
         </state>
       </provider>
     </entry>
@@ -338,6 +392,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mac/Media.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="272">
@@ -346,77 +410,117 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mac/GettingStarted.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="336">
-            <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PlatformAgnostic/.gitconfig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mac/Programming.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="608">
             <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mac/karabiner.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1584928508000" expanded="true" signature="0:5046" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="16:150" ph="{&quot;check_for_updates_on_startup&quot;: true...}" />
+            <marker date="1584928508000" expanded="true" signature="168:5044" ph="[...]" />
+            <marker date="1584928508000" expanded="true" signature="178:5038" ph="{&quot;name&quot;: &quot;Nathan&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="217:1461" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="249:605" ph="{&quot;basic.simultaneous_threshold_milliseconds&quot;: 50...}" />
+            <marker date="1584928508000" expanded="true" signature="632:1447" ph="[...]" />
+            <marker date="1584928508000" expanded="true" signature="654:1429" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="696:1407" ph="[...]" />
+            <marker date="1584928508000" expanded="true" signature="726:1381" ph="{&quot;description&quot;: &quot;Change keyboards with F4&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="843:931" ph="{&quot;key_code&quot;: &quot;f4&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="971:1302" ph="[...]" />
+            <marker date="1584928508000" expanded="true" signature="1009:1268" ph="{&quot;key_code&quot;: &quot;spacebar&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="1128:1230" ph="[...]" />
+            <marker date="1584928508000" expanded="true" signature="1522:4441" ph="[...]" />
+            <marker date="1584928508000" expanded="true" signature="1540:1779" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="1570:1634" ph="{&quot;key_code&quot;: &quot;f1&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="1662:1761" ph="{&quot;consumer_key_code&quot;: &quot;display_brightness_decrement&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="1797:2036" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="1827:1891" ph="{&quot;key_code&quot;: &quot;f2&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="1919:2018" ph="{&quot;consumer_key_code&quot;: &quot;display_brightness_increment&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2054:2271" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="2084:2148" ph="{&quot;key_code&quot;: &quot;f3&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2176:2253" ph="{&quot;key_code&quot;: &quot;mission_control&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2289:2500" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="2319:2383" ph="{&quot;key_code&quot;: &quot;f4&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2411:2482" ph="{&quot;key_code&quot;: &quot;launchpad&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2518:2742" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="2548:2612" ph="{&quot;key_code&quot;: &quot;f5&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2640:2724" ph="{&quot;key_code&quot;: &quot;illumination_decrement&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2760:2984" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="2790:2854" ph="{&quot;key_code&quot;: &quot;f6&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="2882:2966" ph="{&quot;key_code&quot;: &quot;illumination_increment&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3002:3219" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="3032:3096" ph="{&quot;key_code&quot;: &quot;f7&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3124:3201" ph="{&quot;consumer_key_code&quot;: &quot;rewind&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3237:3461" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="3267:3331" ph="{&quot;key_code&quot;: &quot;f8&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3359:3443" ph="{&quot;consumer_key_code&quot;: &quot;play_or_pause&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3479:3701" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="3509:3573" ph="{&quot;key_code&quot;: &quot;f9&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3601:3683" ph="{&quot;consumer_key_code&quot;: &quot;fastforward&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3719:3935" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="3749:3814" ph="{&quot;key_code&quot;: &quot;f10&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3842:3917" ph="{&quot;consumer_key_code&quot;: &quot;mute&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="3953:4181" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="3983:4048" ph="{&quot;key_code&quot;: &quot;f11&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="4076:4163" ph="{&quot;consumer_key_code&quot;: &quot;volume_decrement&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="4199:4427" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="4229:4294" ph="{&quot;key_code&quot;: &quot;f12&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="4322:4409" ph="{&quot;consumer_key_code&quot;: &quot;volume_increment&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="4499:4576" ph="{&quot;delay_milliseconds_before_open_device&quot;: 1000...}" />
+            <marker date="1584928508000" expanded="true" signature="4644:4898" ph="[...]" />
+            <marker date="1584928508000" expanded="true" signature="4662:4884" ph="{...}" />
+            <marker date="1584928508000" expanded="true" signature="4692:4763" ph="{&quot;key_code&quot;: &quot;caps_lock&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="4791:4866" ph="{&quot;key_code&quot;: &quot;play_or_pause&quot;...}" />
+            <marker date="1584928508000" expanded="true" signature="4936:5028" ph="{&quot;country_code&quot;: 0...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raspbian/.lastcast.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raspbian/lastcast.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Raspbian/GettingStarted.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="336">
-            <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
       <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -426,6 +530,37 @@
           <second_editor>
             <js_state />
           </second_editor>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="544">
+            <caret line="34" column="62" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mac/GettingStarted.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="448">
+            <caret line="28" column="88" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

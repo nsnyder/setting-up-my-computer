@@ -28,7 +28,7 @@ Add these lines to `~/.bash_profile`:
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /Users/nathan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+. /Users/nathan/Library/Python/3.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 ```
 
 The final line can be gotten by running `pip show powerline-status` and then
@@ -45,7 +45,7 @@ The necessary fonts may have already been installed, but if not, check [here](Ge
 
 You will need to restart Terminal.app after installation.
 
-#### References:
+### References:
 [How to Jazz Up Your Bash Terminal — A Step By Step Guide With Pictures](https://www.freecodecamp.org/news/jazz-up-your-bash-terminal-a-step-by-step-guide-with-pictures-80267554cb22/)
 
 ## SSH

@@ -2,23 +2,13 @@
 
 This file should contain a variety of setups that I use for programming.
 
-## Bash
-
-MacOS ships with a 2007 (!!!) version of Bash. We should upgrade it.
-
-```
-brew install bash
-```
-
-Restart the terminal. That was easy :smile:
-
 ## Pip
 
 Pip can be installed with [get-pip.py](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)
 ```
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
-rm get-pip.py
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python3 get-pip.py
+$ rm get-pip.py
 ```
 
 ## Powerline
@@ -28,8 +18,8 @@ If anything here doesn't work, follow the reference linked below.
 First install [Pip](#pip) (above). Then do as follows:
 
 ```
-pip install --user powerline-status
-pip install --user powerline-gitstatus
+$ pip install --user powerline-status
+$ pip install --user powerline-gitstatus
 ```
 
 Add these lines to `~/.bash_profile`:
@@ -47,8 +37,8 @@ using the `Location`  field, with everything past `site-packages`.
 Copy the files from `./src/powerline` to the respective folders (and remove the `colorschemes.` and `themes.`
 prefixes).
 ```
-cp colorschemes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files/colorschemes/shell/default.json
-cp themes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files/themes/shell/default.json
+$ cp colorschemes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files/colorschemes/shell/default.json
+$ cp themes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files/themes/shell/default.json
 ```
 
 The necessary fonts may have already been installed, but if not, check [here](GettingStarted.md#menlo-for-powerline).
@@ -65,7 +55,7 @@ To configure Mac OS to
 run this command:
 
 ```
-ssh-add -K ~/.ssh/[your-private-key]
+s$ sh-add -K ~/.ssh/[your-private-key]
 ```
 
 Next, copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.

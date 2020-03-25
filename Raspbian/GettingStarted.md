@@ -28,9 +28,14 @@ Then run this command:
 `chmod +x lastcast.service`
 Copy your (modified) `.lastcast.toml` to `/home/pi/.lastcast.toml`
 Upgrade PyChromecast (this may give a warning, but it should still work):
-`pip3 install --upgrade PyChromecast==4.2`
+```
+$ pip3 install --upgrade PyChromecast==4.2
+```
+
 Enable the service with:
-`sudo systemctl enable lastcast --now`
+```
+$ sudo systemctl enable lastcast --now
+```
 
 For good measure, feel free to reboot the Pi: `sudo reboot now`
 
@@ -43,11 +48,15 @@ There are multiple versions of Python installed on Raspbian by default.
 ## SSH
 
 To use your existing SSH key to login to your Raspberry Pi, run:
-`ssh-copy-id pi@{ip_address}`
+```
+$ ssh-copy-id pi@{ip_address}
+```
 
 # Sudo
 
 If you don't want the `pi` user to be able to run `sudo` commands without
 a password (which you shouldn't), remove the file that enables that like so:
 
-`sudo rm 010_pi-nopasswd `
+```
+sudo rm 010_pi-nopasswd
+```

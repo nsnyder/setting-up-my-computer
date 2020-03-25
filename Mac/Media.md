@@ -10,7 +10,7 @@ tags on media files, especially audio files.
 
 First, install it:
 ```
-brew install eye-d3
+$ brew install eye-d3
 ```
 
 The main thing I keep it for is
@@ -19,5 +19,5 @@ from .mp3 files, like the DRM on Google Play Music purchases.
 You can do this like so:
 
 ```
-eyeD3 --remove-frame PRIV ./
+$ eyeD3 --remove-frame PRIV ./
 ```

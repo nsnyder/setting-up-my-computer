@@ -42,6 +42,7 @@ $ cp themes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline
 ```
 
 The necessary fonts may have already been installed, but if not, check [here](GettingStarted.md#menlo-for-powerline).
+Enable the fonts in the Terminal.app preferences.
 
 You will need to restart Terminal.app after installation.
 

@@ -48,10 +48,11 @@ You should probably go through [Bash](#bash) and [Bash Completion](#bash-complet
 
 This is my preferred font for programming. To install it, follow the instructions
 [here](https://github.com/tonsky/FiraCode/wiki/Installing).
+Fira Code has all features necessary to support [Powerline](Programming.md#powerline).
 
 ### Menlo for Powerline
 
-Menlo for Powerline is necessary to get all the desired affects when running
+Menlo for Powerline is an alternative to Fira Code that supports all desired effects when running
 [Powerline](Programming.md#powerline) in the terminal. Get it [here](https://github.com/abertsch/Menlo-for-Powerline).
 
 ## Karabiner Elements

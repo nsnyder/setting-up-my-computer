@@ -31,6 +31,22 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "description": "Summon the emoji keyboard with F3",
+                                "from": {
+                                    "key_code": "f3"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     }

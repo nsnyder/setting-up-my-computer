@@ -2,6 +2,16 @@
 
 This file should contain a variety of setups that I use for programming.
 
+## Bash
+
+MacOS ships with a 2007 (!!!) version of Bash. We should upgrade it.
+
+```
+brew install bash
+```
+
+Restart the terminal. That was easy :smile:
+
 ## Pip
 
 Pip can be installed with [get-pip.py](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)

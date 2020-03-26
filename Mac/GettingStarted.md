@@ -10,7 +10,9 @@ when you start up your Mac. Start with [Brew](#brew).
 [Bash](#bash), go ahead and run these:
 
 ```
-$ brew install getantibody/tap/antibody && mkdir ~/.zsh
+$ brew install getantibody/tap/antibody
+$ brew install autojump
+$ mkdir ~/.zsh
 ```
 
 From the root project directory, run:

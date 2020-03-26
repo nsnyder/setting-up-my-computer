@@ -3,6 +3,16 @@
 There are some things that should be done before anything else
 when you start up your Mac. Start with [Brew](#brew).
 
+## Autojump
+
+[Autojump](https://github.com/wting/autojump) is a tool to quickly browse through your files.
+It works in most shells, but only for files you've already navigated to. Install it,
+then it should work with either of the existing configurations for either Bash or ZSH.
+
+```
+$ brew install autojump
+```
+
 ## Bash
 
 MacOS ships with a 2007 (!!!) version of Bash. We should upgrade it.

@@ -7,6 +7,7 @@ POWERLINE_BASH_SELECT=1
 # Set up bash-completion
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH"

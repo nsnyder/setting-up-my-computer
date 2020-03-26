@@ -1,0 +1,5 @@
+# Nice plugins :)
+
+# Setup syntax highlighting last (necessary, except for substring search for some reason)
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search

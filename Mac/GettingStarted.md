@@ -3,6 +3,25 @@
 There are some things that should be done before anything else
 when you start up your Mac. Start with [Brew](#brew).
 
+## Antibody
+
+[Antibody](http://getantibody.github.io/) is a plugin manager for ZSH
+(MacOS's default shell as of Catalina). If you've chosen to forgo
+[Bash](#bash), go ahead and run these:
+
+```
+$ brew install getantibody/tap/antibody && mkdir ~/.zsh
+```
+
+From the root project directory, run:
+```
+$ cp Mac/src/zsh/.zshrc ~/.zshrc
+$ cp Mac/src/zsh/.plugins.txt ~/.zsh/.plugins.txt
+$ antibody bundle < ~/.zsh/.plugins.txt > ~/.zsh/.plugins.sh
+```
+
+You'll also run the above command any time you update any `zsh` plugins. Restart `zsh`.
+
 ## Bash
 
 MacOS ships with a 2007 (!!!) version of Bash. We should upgrade it.
@@ -42,6 +61,9 @@ Mac will be installed through Brew.
 
 You should probably go through [Bash](#bash) and [Bash Completion](#bash-completion) next.
 
+If you have any problems with anything `brew` related, try `brew doctor` and read through
+any messages that appear.
+
 ## Fonts
 
 ### Fira Code
@@ -64,3 +86,7 @@ $ brew cask install karabiner-elements
 ```
 
 Add the `karabiner.json` from this file to `~/.config/karabiner`, and you're good to go!
+
+## ZSH
+
+See [Antibody](#antibody).

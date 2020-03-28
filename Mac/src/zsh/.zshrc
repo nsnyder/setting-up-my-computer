@@ -1,5 +1,13 @@
 export TYPEWRITTEN_MULTILINE=true
 
+# Ripped from: https://carlosbecker.com/posts/speeding-up-zsh/
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
 source ~/.zsh/.plugins.sh
 
 export ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%} ✘"
@@ -12,14 +20,6 @@ setopt AUTO_CD
 # Tab completion:
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-
-# Ripped from: https://carlosbecker.com/posts/speeding-up-zsh/
-autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-  compinit
-else
-  compinit -C
-fi
 
 # Tab complete hidden files
 _comp_options+=(globdots)

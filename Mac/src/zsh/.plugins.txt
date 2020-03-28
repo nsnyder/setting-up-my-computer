@@ -1,5 +1,8 @@
 # Nice plugins :)
 wting/autojump path:bin
+ohmyzsh/ohmyzsh path:plugins/git-prompt
+ohmyzsh/ohmyzsh path:lib
+reobin/typewritten
 
 # Setup syntax highlighting last (necessary, except for substring search for some reason)
 zsh-users/zsh-syntax-highlighting

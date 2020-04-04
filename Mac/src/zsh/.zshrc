@@ -1,4 +1,4 @@
-export TYPEWRITTEN_MULTILINE=true
+export TYPEWRITTEN_MULTILINE=false
 
 # Ripped from: https://carlosbecker.com/posts/speeding-up-zsh/
 autoload -Uz compinit
@@ -25,6 +25,8 @@ zmodload zsh/complist
 _comp_options+=(globdots)
 
 # Aliases:
+alias gd='git diff'
+alias gs='git status'
 alias l='ls -AF'
 alias build-antibody="antibody bundle < ~/.zsh/.plugins.txt > ~/.zsh/.plugins.sh && source ~/.zshrc"
 

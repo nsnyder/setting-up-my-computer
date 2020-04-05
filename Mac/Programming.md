@@ -56,7 +56,14 @@ To configure Mac OS to
 run this command:
 
 ```
-s$ sh-add -K ~/.ssh/[your-private-key]
+$ sh-add -K ~/.ssh/[your-private-key]
 ```
 
 Next, copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.
+
+## VSCode
+
+Install it with:
+```
+$ brew cask install visual-studio-code
+```

@@ -9,6 +9,9 @@ Installed with:
 brew cask install iterm2
 ```
 
+I use a variant of the [Lovelace theme](https://iterm2colorschemes.com/).
+My current theme can be imported from `/src/Item2Theme.json`.
+
 ## Pip
 
 Pip can be installed with [get-pip.py](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)

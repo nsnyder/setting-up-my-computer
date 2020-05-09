@@ -2,6 +2,13 @@
 
 This file should contain a variety of setups that I use for programming.
 
+## Iterm2
+
+Installed with:
+```
+brew cask install iterm2
+```
+
 ## Pip
 
 Pip can be installed with [get-pip.py](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)
@@ -60,6 +67,42 @@ $ sh-add -K ~/.ssh/[your-private-key]
 ```
 
 Next, copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.
+
+## tmux
+
+I'm currently using `tmux` for `zsh` session management.
+To get started, simply run:
+
+```
+brew install tmux
+```
+
+### Handy Commands
+
+Start a new session:
+```
+tmux new -s [session name]
+```
+
+Attach to an existing session:
+```
+tmux attach-session -t [session_name]
+```
+
+List existing sessions:
+```
+tmux ls
+```
+
+Detach from within a `tmux` session:
+```
+Ctrl+b, d // Denoted as C-b d
+```
+
+Show all `tmux` commands:
+```
+Ctrl+b, ? // Denoted as C-b ?
+```
 
 ## VSCode
 

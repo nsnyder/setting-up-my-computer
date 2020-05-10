@@ -75,9 +75,14 @@ Next, copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.
 
 I'm currently using `tmux` for `zsh` session management.
 To get started, simply run:
-
 ```
 brew install tmux
+```
+
+I recommend adding it's configuration in the expected location by linking to
+the config in this repo.
+```
+ln -s /Users/nathan/projects/setting-up-my-computer/Mac/src/.tmux.conf /Users/nathan/.tmux.conf
 ```
 
 ### Handy Commands

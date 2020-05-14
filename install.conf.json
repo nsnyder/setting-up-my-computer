@@ -1,0 +1,38 @@
+[
+  {
+    "defaults": {
+      "link": {
+        "relink": true,
+        "create": true
+      }
+    }
+  },
+  {
+    "clean": [
+      "~"
+    ]
+  },
+  {
+    "link": {
+      "~/.zshrc": "dotfiles/zsh/.zshrc",
+      "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
+      "~/.tmux.conf": "dotfiles/.tmux.conf",
+      "~/.config/karabiner/karabiner.json": "dotfiles/karabiner.json",
+      "~/.ssh/config": "dotfiles/ssh-config",
+      "~/.gitconfig": "dotfiles/.gitconfig"
+    }
+  },
+  {
+    "create": [
+      "~/Downloads"
+    ]
+  },
+  {
+    "shell": [
+      [
+        "git submodule update --init --recursive",
+        "Installing submodules"
+      ]
+    ]
+  }
+]

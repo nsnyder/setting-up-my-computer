@@ -10,7 +10,7 @@ brew cask install iterm2
 ```
 
 I use a variant of the [Lovelace theme](https://iterm2colorschemes.com/).
-My current theme can be imported from `/src/Item2Theme.json`.
+My current theme can be imported from `/src/Iterm2Theme.json`.
 
 ## Pip
 
@@ -32,7 +32,7 @@ $ pip install --user powerline-status
 $ pip install --user powerline-gitstatus
 ```
 
-Add these lines to `~/.bash_profile`:
+These lines should already be configured in your `~/.bash_profile`:
 
 ```
 powerline-daemon -q
@@ -44,8 +44,7 @@ POWERLINE_BASH_SELECT=1
 The final line can be gotten by running `pip show powerline-status` and then
 using the `Location`  field, with everything past `site-packages`.
 
-Copy the files from `./src/powerline` to the respective folders (and remove the `colorschemes.` and `themes.`
-prefixes).
+These should have been configured by `./install install.conf.bash.json`, but if not, run:
 ```
 $ cp colorschemes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files/colorschemes/shell/default.json
 $ cp themes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files/themes/shell/default.json
@@ -69,7 +68,8 @@ run this command:
 $ sh-add -K ~/.ssh/[your-private-key]
 ```
 
-Next, copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.
+Your SSH config should already be properly configured, but if not
+copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.
 
 ## tmux
 
@@ -79,10 +79,9 @@ To get started, simply run:
 brew install tmux
 ```
 
-I recommend adding it's configuration in the expected location by linking to
-the config in this repo.
+The config should already be linked to the one in this repo:
 ```
-ln -s /Users/nathan/projects/setting-up-my-computer/Mac/src/.tmux.conf /Users/nathan/.tmux.conf
+/dotfiles/.tmux.conf => /Users/nathan/.tmux.conf
 ```
 
 ### Handy Commands

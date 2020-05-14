@@ -32,6 +32,10 @@
       [
         "git submodule update --init --recursive",
         "Installing submodules"
+      ],
+      [
+        "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm",
+        "Setting up the tmux plugin manager"
       ]
     ]
   }

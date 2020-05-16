@@ -50,10 +50,10 @@ $ cp colorschemes.default.json ~/Library/Python/2.7/lib/python/site-packages/pow
 $ cp themes.default.json ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files/themes/shell/default.json
 ```
 
-The necessary fonts may have already been installed, but if not, check [here](GettingStarted.md#menlo-for-powerline).
+The necessary fonts may have already been installed, but if not, check [here](GettingStarted.md#fira-code).
 Enable the fonts in the Terminal.app preferences.
 
-You will need to restart Terminal.app after installation.
+You will need to restart your shell after installation.
 
 ### References:
 [How to Jazz Up Your Bash Terminal — A Step By Step Guide With Pictures](https://www.freecodecamp.org/news/jazz-up-your-bash-terminal-a-step-by-step-guide-with-pictures-80267554cb22/)

@@ -14,6 +14,8 @@
   },
   {
     "link": {
+      "~/.scripts": "dotfiles/.scripts",
+      "~/.tmuxline": "dotfiles/.tmuxline",
       "~/.zshrc": "dotfiles/zsh/.zshrc",
       "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
       "~/.tmux.conf": "dotfiles/.tmux.conf",

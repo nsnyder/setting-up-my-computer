@@ -2,7 +2,7 @@
 
 There are some things that should be done before anything else
 when you start up your Mac. Start with [Brew](#brew). Then run:
-```bash
+```sh
 ./install # This will use dotbot to install dotfiles as specified in install.conf.json
 ```
 
@@ -12,12 +12,12 @@ when you start up your Mac. Start with [Brew](#brew). Then run:
 (MacOS's default shell as of Catalina). If you've chosen to forgo
 [Bash](#bash), go ahead and run this:
 
-```
+```sh
 $ brew install getantibody/tap/antibody
 ```
 
 Then run:
-```
+```sh
 $ antibody-build
 # antibody-build is a .zshrc alias for:
 # antibody bundle < ~/.zsh/.plugins.txt > ~/.zsh/.plugins.sh
@@ -80,8 +80,6 @@ The first thing to install on Mac OS is install [Brew](https://brew.sh).
 The instructions should be available on the website. Most other things on
 Mac will be installed through Brew.
 
-You should probably go through [Bash](#bash) and [Bash Completion](#bash-completion) next.
-
 If you have any problems with anything `brew` related, try `brew doctor` and read through
 any messages that appear.
 
@@ -107,6 +105,7 @@ $ brew cask install karabiner-elements
 ```
 
 Add the `karabiner.json` from this file to `~/.config/karabiner`, and you're good to go!
+(This step has already been accomplished if you ran the dotbot `./install`.)
 
 ## ZSH
 

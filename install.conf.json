@@ -1,0 +1,45 @@
+[
+  {
+    "defaults": {
+      "link": {
+        "relink": true,
+        "create": true
+      }
+    }
+  },
+  {
+    "clean": [
+      "~"
+    ]
+  },
+  {
+    "link": {
+      "~/.config/karabiner/karabiner.json": "dotfiles/karabiner.json",
+      "~/.gitconfig": "dotfiles/.gitconfig",
+      "~/.scripts": "dotfiles/.scripts",
+      "~/.ssh/config": "dotfiles/ssh-config",
+      "~/.tmux/.colors.conf": "dotfiles/.tmux/.colors.conf",
+      "~/.tmux/.line.conf": "dotfiles/.tmux/.line.conf",
+      "~/.tmux.conf": "dotfiles/.tmux.conf",
+      "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
+      "~/.zshrc": "dotfiles/zsh/.zshrc"
+    }
+  },
+  {
+    "create": [
+      "~/Downloads"
+    ]
+  },
+  {
+    "shell": [
+      [
+        "git submodule update --init --recursive",
+        "Installing submodules"
+      ],
+      [
+        "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm",
+        "Setting up the tmux plugin manager"
+      ]
+    ]
+  }
+]

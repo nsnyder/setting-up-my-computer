@@ -1,30 +1,32 @@
 # Getting Started
 
 There are some things that should be done before anything else
-when you start up your Mac. Start with [Brew](#brew).
+when you start up your Mac. Start with [Brew](#brew). Then run:
+```sh
+./install # This will use dotbot to install dotfiles as specified in install.conf.json
+```
 
 ## Antibody
 
 [Antibody](http://getantibody.github.io/) is a plugin manager for ZSH
 (MacOS's default shell as of Catalina). If you've chosen to forgo
-[Bash](#bash), go ahead and run these:
+[Bash](#bash), go ahead and run this:
 
-```
+```sh
 $ brew install getantibody/tap/antibody
-$ brew install autojump
-$ mkdir ~/.zsh
 ```
 
-From the root project directory, run:
-```
-$ cp Mac/src/zsh/.zshrc ~/.zshrc
-$ cp Mac/src/zsh/.plugins.txt ~/.zsh/.plugins.txt
+Then run:
+```sh
 $ antibody-build
 # antibody-build is a .zshrc alias for:
 # antibody bundle < ~/.zsh/.plugins.txt > ~/.zsh/.plugins.sh
 ```
 
-You'll also run the above command any time you update any `zsh` plugins. Restart `zsh`.
+You'll also run the above command any time you update any `zsh` plugins. Restart `zsh`:
+```bash
+source ~/.zshrc
+```
 
 ## Autojump
 
@@ -54,6 +56,11 @@ And then change the default shell as follows:
 $ chsh -s /usr/local/bin/bash
 ```
 
+You'll also want to make sure all necessary configuration dotfiles are installed:
+```bash
+./install install.conf.bash.json
+```
+
 Voila!
 
 ## Bash Completion
@@ -72,8 +79,6 @@ $ brew install bash-completion@2
 The first thing to install on Mac OS is install [Brew](https://brew.sh).
 The instructions should be available on the website. Most other things on
 Mac will be installed through Brew.
-
-You should probably go through [Bash](#bash) and [Bash Completion](#bash-completion) next.
 
 If you have any problems with anything `brew` related, try `brew doctor` and read through
 any messages that appear.
@@ -100,6 +105,7 @@ $ brew cask install karabiner-elements
 ```
 
 Add the `karabiner.json` from this file to `~/.config/karabiner`, and you're good to go!
+(This step has already been accomplished if you ran the dotbot `./install`.)
 
 ## ZSH
 

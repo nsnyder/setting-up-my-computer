@@ -3,5 +3,5 @@
 [commit]
 	gpgsign = true
 [user]
-	signingkey = KEY_GOES_HERE
+	signingkey = 21EA719B173EB56D0B72F35CA10277903E7D838F
 	email = nathan@snydern.com

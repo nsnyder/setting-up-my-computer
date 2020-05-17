@@ -1,14 +1,14 @@
-# Nice plugins :)
+# Nice plugins. :)
 wting/autojump path:bin
 ohmyzsh/ohmyzsh path:plugins/git-prompt
 ohmyzsh/ohmyzsh path:lib
 # zsh-users/zsh-history-substring-search
-zsh-users/zsh-autosuggestions
 
-# My theme :)
+# My theme. :)
 reobin/typewritten
 # denysdovhan/spaceship-prompt
 
-# Setup syntax highlighting last (necessary, except for substring search for some reason)
+# Setup syntax highlighting last (necessary, except for substring search for some reason).
+zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search

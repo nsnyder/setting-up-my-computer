@@ -66,6 +66,8 @@ _comp_options+=(globdots)
 alias ga='git add .'
 alias gc='git commit -a'
 alias gd='git diff'
+alias gp='git push'
+alias gpu='git push -u'
 alias gs='git status'
 alias l='ls -AF'
 

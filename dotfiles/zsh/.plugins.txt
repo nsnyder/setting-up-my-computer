@@ -12,3 +12,4 @@ reobin/typewritten
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
+brymck/print-alias

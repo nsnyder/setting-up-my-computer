@@ -3,7 +3,7 @@
 set -e
 
 # Allow alternative configs to be passed (i.e. for different OSs)
-CONFIG="install.conf.json"
+CONFIG="install.conf.mac.json"
 if [ -n "$1" ]
   then
     CONFIG=$1

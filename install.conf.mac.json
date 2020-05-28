@@ -15,6 +15,7 @@
   {
     "link": {
       "~/.config/karabiner/karabiner.json": "dotfiles/karabiner.json",
+      "~/.dir_colors": "dotfiles/.dir_colors",
       "~/.gitconfig": "dotfiles/.gitconfig",
       "~/.scripts": "dotfiles/.scripts",
       "~/.ssh/config": "dotfiles/ssh-config",
@@ -34,11 +35,15 @@
     "shell": [
       [
         "git submodule update --init --recursive",
-        "Installing submodules"
+        "Installing submodules."
       ],
       [
-        "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm",
-        "Setting up the tmux plugin manager"
+        "if [[ -e ~/.tmux/plugins/tpm ]]; then git -C ~/.tmux/plugins/tpm pull; else git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi",
+        "Setting up the tmux plugin manager."
+      ],
+      [
+        "./dotfiles/.scripts/brews.sh",
+        "Installing brews."
       ]
     ]
   }

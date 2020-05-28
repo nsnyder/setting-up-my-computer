@@ -1,0 +1,249 @@
+# Configuration file for dircolors, a utility to help you set the
+# LS_COLORS environment variable used by GNU ls with the --color option.
+# Copyright (C) 1996-2020 Free Software Foundation, Inc.
+# Copying and distribution of this file, with or without modification,
+# are permitted provided the copyright notice and this notice are preserved.
+# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
+# slackware version of dircolors) are recognized but ignored.
+# Below are TERM entries, which can be a glob patterns, to match
+# against the TERM environment variable to determine if it is colorizable.
+TERM Eterm
+TERM ansi
+TERM *color*
+TERM con[0-9]*x[0-9]*
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM gnome
+TERM hurd
+TERM jfbterm
+TERM konsole
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mlterm
+TERM putty
+TERM rxvt*
+TERM screen*
+TERM st
+TERM terminator
+TERM tmux*
+TERM vt100
+TERM xterm*
+
+# Below are the color init strings for the basic file types.
+# One can use codes for 256 or more colors supported by modern terminals.
+# The default color codes use the capabilities of an 8 color terminal
+# with some additional attributes as per the following codes.
+
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+
+############################
+#   Default file colors    #
+############################
+
+# Regular file (no color code):
+NORMAL 00
+FILE 00
+RESET 0 # reset to "normal" color
+# Directory (bold blue):
+DIR 01;34
+# Symbolic link. (If you set this to 'target' instead of a numerical value,
+#   the color defined by the linked file.)
+LINK target
+# Regular file with more than one link (no color code):
+MULTIHARDLINK 00
+# Pipe (yellow on black):
+FIFO 40;33
+# Sockets and doors (bold magenta):
+SOCK 01;35
+DOOR 01;35
+# Block device drivers and character device drivers (bold yellow on black):
+BLK 40;33;01
+CHR 40;33;01
+# Symlink to nonexistent file, or non-stat'able file (bold red on black):
+ORPHAN 40;31;01
+# Missing file belonging to a symlink (red, underlined):
+MISSING 04;31
+# File that is setuid (u+s) (white on red):
+SETUID 37;41
+# File that is setgid (g+s) (black on yellow):
+SETGID 30;43
+# File with capability (black on red):
+CAPABILITY 30;41
+# Directory that is sticky and other-writable (+t,o+w) (black on green):
+STICKY_OTHER_WRITABLE 30;42
+# dir that is other-writable (o+w) but not sticky (blue on green):
+OTHER_WRITABLE 34;42
+# Directory that is sticky but not other-writable (white on blue):
+STICKY 37;44
+# Files with the executable flag (bright green):
+EXEC 04;32
+
+# List any file extensions like '.gz' or '.tar' that you would like ls
+# to colorize below. Put the extension, a space, and the color init string.
+# (and any comments you want to add after a '#')
+
+# Script files that don't have the executable flag (white, underlined):
+.bat 04;37
+.btm 04;37
+.cmd 04;37
+.com 04;37
+.csh 04;37
+.exe 04;37
+.sh 04;37
+
+ # Archives or compressed (bold red):
+.7z 01;31
+.gz 01;31
+.tar 01;31
+.zip 01;31
+
+.ace 01;31
+.alz 01;31
+.arc 01;31
+.arj 01;31
+.bz 01;31
+.bz2 01;31
+.cab 01;31
+.cpio 01;31
+.deb 01;31
+.dwm 01;31
+.dz 01;31
+.ear 01;31
+.esd 01;31
+.jar 01;31
+.lha 01;31
+.lrz 01;31
+.lz 01;31
+.lz4 01;31
+.lzh 01;31
+.lzma 01;31
+.lzo 01;31
+.rar 01;31
+.rpm 01;31
+.rz 01;31
+.sar 01;31
+.swm 01;31
+.t7z 01;31
+.taz 01;31
+.tbz 01;31
+.tbz2 01;31
+.tgz 01;31
+.tlz 01;31
+.txz 01;31
+.tz 01;31
+.tzo 01;31
+.tzst 01;31
+.war 01;31
+.wim 01;31
+.xz 01;31
+.z 01;31
+.zoo 01;31
+.zst 01;31
+
+# Images (bold magenta):
+.bmp 00;35
+.gif 00;35
+.ico 00;35
+.jpeg 00;35
+.jpg 00;35
+.png 00;35
+.svg 00;35
+
+.cgm 00;35
+.dl 00;35
+.emf 00;35
+.flc 00;35
+.fli 00;35
+.gl 00;35
+.mng 00;35
+.ogm 00;35
+.pbm 00;35
+.pcx 00;35
+.pgm 00;35
+.ppm 00;35
+.svgz 00;35
+.tga 00;35
+.tif 00;35
+.tiff 00;35
+.webp 00;35
+.xbm 00;35
+.xcf 00;35
+.xpm 00;35
+.xwd 00;35
+.yuv 00;35
+
+# Video formats (magenta):
+.mkv 00;35
+.mp4 00;35
+.mpeg 00;35
+.mpg 00;35
+.webm 00;35
+.wmv 00;35
+
+.asf 00;35
+.avi 00;35
+.flv 00;35
+.m2v 00;35
+.m4v 00;35
+.mjpeg 00;35
+.mjpg 00;35
+.mov 00;35
+.mp4v 00;35
+.nuv 00;35
+.ogv 00;35
+.ogx 00;35
+.qt 00;35
+.rm 00;35
+.rmvb 00;35
+.vob 00;35
+
+# Audio formats (blue):
+.aac 00;36
+.au 00;36
+.flac 00;36
+.m4a 00;36
+.mid 00;36
+.midi 00;36
+.mka 00;36
+.mp3 00;36
+.mpc 00;36
+.ogg 00;36
+.ra 00;36
+.wav 00;36
+.oga 00;36
+.opus 00;36
+.spx 00;36
+.xspf 00;36
+
+# Web presentation formats (html, css, etc.) (bold yellow):
+.css 01;33
+.sass 01;33
+.scss 01;33
+.html 01;33
+.md 01;33
+.markdown 01;33
+
+# Javascript-ish formats (bold cyan):
+.js 01;36
+.ts 01;36
+.jsx 01;36
+.tsx 01;36
+.vue 01;36
+.json 01;36
+
+# Git-ish/Programming formats, OS files (bold green):
+.gitignore 01;32
+.gitmodules 01;32
+*LICENSE 01;32
+.ds_store 01;32
+.code-workspace 01;32

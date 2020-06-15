@@ -2,6 +2,7 @@
 wting/autojump path:bin
 ohmyzsh/ohmyzsh path:plugins/git-prompt
 ohmyzsh/ohmyzsh path:lib
+MichaelAquilina/zsh-you-should-use
 # zsh-users/zsh-history-substring-search
 
 # My theme. :)

@@ -30,10 +30,8 @@ _update_zcomp() {
     local zcompf_a="${zcompf}.augur"
 
     if [[ -e "$zcompf_a" && -f "$zcompf_a"(#qN.md-1) ]]; then
-        echo "load slowly"
         compinit -C -d "$zcompf"
     else
-        echo "load quickly"
         compinit -d "$zcompf"
         touch "$zcompf_a"
     fi

@@ -8,4 +8,4 @@ eval "$(gdircolors ~/.dir_colors)"
 ###########################################
 #        Setup Core Configuration         #
 ###########################################
-source "./.zshrc.core"
+source ~/.zshrc.core

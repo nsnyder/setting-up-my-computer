@@ -55,7 +55,11 @@ unfunction _update_zcomp
 
 export ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%} ✘"
 
-export TYPEWRITTEN_MULTILINE=false
+if [[ -n $SSH_CLIENT ]] then;
+  export TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
+else
+  export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
+fi
 
 # Import plugins.
 source ~/.zsh/.plugins.sh

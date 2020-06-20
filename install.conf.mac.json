@@ -23,6 +23,7 @@
       "~/.tmux/.line.conf": "dotfiles/.tmux/.line.conf",
       "~/.tmux.conf": "dotfiles/.tmux.conf",
       "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
+      "~/.zshrc.core": "dotfiles/zsh/.zshrc.core",
       "~/.zshrc": "dotfiles/zsh/.zshrc.mac"
     }
   },

@@ -2,6 +2,11 @@
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=247"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+export ZDOTDIR=$HOME/.zsh
+
+# Set "hardcore mode" for zsh-you-should-use.
+export YSU_HARDCORE=1
+
 # Ripped from: https://carlosbecker.com/posts/speeding-up-zsh/
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then

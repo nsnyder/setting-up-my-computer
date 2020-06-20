@@ -19,6 +19,7 @@
       "~/.gitconfig": "dotfiles/.gitconfig",
       "~/.scripts": "dotfiles/.scripts",
       "~/.ssh/config": "dotfiles/ssh-config.mac",
+      "~/.ssh/config.core": "dotfiles/ssh-config.core",
       "~/.tmux/.colors.conf": "dotfiles/.tmux/.colors.conf",
       "~/.tmux/.line.conf": "dotfiles/.tmux/.line.conf",
       "~/.tmux.conf": "dotfiles/.tmux.conf",

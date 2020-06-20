@@ -110,8 +110,8 @@ alias gpu='git push -u'
 alias gs='git status'
 
 # Common utilities.
-alias ls='gls $LS_OPTIONS'
-alias l='gls $LS_OPTIONS -AF'
+alias ls='ls $LS_OPTIONS'
+alias l='ls $LS_OPTIONS -AF'
 
 # Presentation mode.
 alias present='export PRESENT=$(pwd)'

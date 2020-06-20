@@ -1,5 +1,4 @@
 Host *
-  UseKeychain yes
 
 Host mycloud
   HostName 192.168.1.3

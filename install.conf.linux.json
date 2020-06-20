@@ -14,16 +14,15 @@
   },
   {
     "link": {
-      "~/.config/karabiner/karabiner.json": "dotfiles/karabiner.json",
       "~/.dir_colors": "dotfiles/.dir_colors",
       "~/.gitconfig": "dotfiles/.gitconfig",
       "~/.scripts": "dotfiles/.scripts",
-      "~/.ssh/config": "dotfiles/ssh-config.mac",
+      "~/.ssh/config": "dotfiles/ssh-config.linux",
       "~/.tmux/.colors.conf": "dotfiles/.tmux/.colors.conf",
       "~/.tmux/.line.conf": "dotfiles/.tmux/.line.conf",
       "~/.tmux.conf": "dotfiles/.tmux.conf",
       "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
-      "~/.zshrc": "dotfiles/zsh/.zshrc.mac"
+      "~/.zshrc": "dotfiles/zsh/.zshrc.linux"
     }
   },
   {
@@ -40,10 +39,6 @@
       [
         "if [[ -e ~/.tmux/plugins/tpm ]]; then git -C ~/.tmux/plugins/tpm pull; else git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi",
         "Setting up the tmux plugin manager."
-      ],
-      [
-        "./dotfiles/.scripts/brews.sh",
-        "Installing brews."
       ]
     ]
   }

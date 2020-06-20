@@ -4,6 +4,7 @@ ohmyzsh/ohmyzsh path:plugins/git-prompt
 ohmyzsh/ohmyzsh path:lib
 laggardkernel/zsh-thefuck
 MichaelAquilina/zsh-you-should-use
+brymck/print-alias
 # zsh-users/zsh-history-substring-search
 
 # My theme. :)
@@ -14,4 +15,3 @@ reobin/typewritten
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
-brymck/print-alias

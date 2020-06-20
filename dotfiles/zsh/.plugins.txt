@@ -5,13 +5,12 @@ ohmyzsh/ohmyzsh path:lib
 laggardkernel/zsh-thefuck
 MichaelAquilina/zsh-you-should-use
 brymck/print-alias
-# zsh-users/zsh-history-substring-search
+zsh-users/zsh-autosuggestions
 
 # My theme. :)
 reobin/typewritten
 # denysdovhan/spaceship-prompt
 
 # Setup syntax highlighting last (necessary, except for substring search for some reason).
-zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search

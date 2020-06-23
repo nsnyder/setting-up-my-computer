@@ -9,7 +9,9 @@
   },
   {
     "clean": [
-      "~"
+      "~",
+      "~/.tmux",
+      "~/.zsh"
     ]
   },
   {
@@ -22,6 +24,8 @@
       "~/.ssh/config.core": "dotfiles/ssh-config.core",
       "~/.tmux/.colors.conf": "dotfiles/.tmux/.colors.conf",
       "~/.tmux/.line.conf": "dotfiles/.tmux/.line.conf",
+      "~/.tmux/.line.mac.conf": "dotfiles/.tmux/.line.mac.conf",
+      "~/.tmux/.line.os.sh": "dotfiles/.tmux/.line.os-specific.sh",
       "~/.tmux.conf": "dotfiles/.tmux.conf",
       "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
       "~/.zshrc.core": "dotfiles/zsh/.zshrc.core",

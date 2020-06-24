@@ -4,6 +4,7 @@
 
 # Set up preferred colors.
 eval "$(dircolors ~/.dir_colors)"
+export TMUX_SESSION_NAME=pi
 
 ###########################################
 #        Setup Core Configuration         #

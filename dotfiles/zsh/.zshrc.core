@@ -1,4 +1,10 @@
 ###########################################
+#        Start tmux Automatically         #
+###########################################
+if [ "$TMUX_SESSION_NAME" = "" ]; then export TMUX_SESSION_NAME=default; fi
+if [ "$TMUX" = "" ]; then tmux attach -t $TMUX_SESSION_NAME || tmux new -s $TMUX_SESSION_NAME; fi
+
+###########################################
 #            Export Variables             #
 ###########################################
 
@@ -90,9 +96,12 @@ export LSCOLORS='GxfxcxcxBxcaeaababagag'
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# Run the prompts, and change directories quicker.
+# Run the prompts.
 setopt PROMPT_SUBST
+# Change directories quicker.
 setopt AUTO_CD
+# Use dvorak for spelling completion.
+setopt DVORAK
 
 # Tab completion:
 zstyle ':completion:*' menu select

@@ -4,6 +4,7 @@
 
 # MacOS doesn't support the more thorough colors format, but you can install gls with coreutils which does!
 eval "$(gdircolors ~/.dir_colors)"
+export TMUX_SESSION_NAME=projects
 
 ###########################################
 #        Setup Core Configuration         #

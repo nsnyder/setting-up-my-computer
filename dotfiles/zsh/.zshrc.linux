@@ -10,8 +10,7 @@ export TMUX_SESSION_NAME=pi
 #         Setup SSH Key Handling          #
 ###########################################
 
-eval $(ssh-agent)
-ssh-add
+{ eval `ssh-agent`; ssh-add /path/to/my/key; } &>/dev/null
 
 ###########################################
 #        Setup Core Configuration         #

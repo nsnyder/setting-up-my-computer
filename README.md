@@ -1,4 +1,4 @@
-# About this Repository!
+# About this Repository
 
 This is a repository made to keep track of the everything I want to remember
 about my computer setup. It's separated into sections for different OSs.

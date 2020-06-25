@@ -11,9 +11,10 @@ export TMUX_SESSION_NAME=pi
 ###########################################
 
 export GPG_TTY=$(tty)
-# { eval `ssh-agent`; ssh-add -l; }
 { eval `gpg-agent`; } &>/dev/null
 
+# The following snippet was taken from:
+#   https://stackoverflow.com/questions/40549332/how-to-check-if-ssh-agent-is-already-running-in-bash
 # Ensure agent is running.
 ssh-add -l &>/dev/null
 if [ "$?" = 2 ]; then

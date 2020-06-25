@@ -6,3 +6,5 @@
 	signingkey = 21EA719B173EB56D0B72F35CA10277903E7D838F
 	email = nathan@snydern.com
 	name = Nathan Snyder
+[pull]
+	ff = only

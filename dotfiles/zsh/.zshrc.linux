@@ -10,7 +10,9 @@ export TMUX_SESSION_NAME=pi
 #         Setup SSH Key Handling          #
 ###########################################
 
+export GPG_TTY=$(tty)
 { eval `ssh-agent`; ssh-add -l; } &>/dev/null
+{ eval `gpg-agent`; } &>/dev/null
 
 ###########################################
 #        Setup Core Configuration         #

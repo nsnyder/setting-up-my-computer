@@ -114,15 +114,19 @@ _comp_options+=(globdots)
 
 # Git.
 alias ga='git add .'
+alias gb='git branch'
+alias gbd='git branch -D'
 alias gc='git commit -a'
 alias gd='git diff'
 alias gp='git push'
-alias gpu='git push -u'
 alias gs='git status'
+alias gull='git pull'
 
 # Common utilities.
-alias ls='ls $LS_OPTIONS'
+alias chreset='chmod 644'
+alias detach='tmux detach -P'
 alias l='ls $LS_OPTIONS -AF'
+alias ls='ls $LS_OPTIONS'
 
 # Presentation mode.
 alias present='export PRESENT=$(pwd)'

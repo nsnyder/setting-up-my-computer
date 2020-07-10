@@ -3,13 +3,12 @@
 set -e
 
 # Allow alternative configs to be passed (i.e. for different OSs)
-CONFIG="install.conf.mac.json"
-if [ -n "$1" ]
-  then
-    CONFIG=$1
+if [ -z "${DOTBOT_INSTALL}" ]; then
+  echo "Please specify a $DOTBOT_INSTALL file. ('export DOTBOT_INSTALL=<filename>')"
+  exit 1
 fi
 
-echo "Installing from ${CONFIG}"
+echo "Installing from $DOTBOT_INSTALL"
 
 DOTBOT_DIR="dotbot"
 
@@ -20,4 +19,4 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${DOTBOT_INSTALL}" "${@}"

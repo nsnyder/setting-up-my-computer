@@ -19,6 +19,7 @@
       "~/.config/karabiner/karabiner.json": "dotfiles/karabiner.json",
       "~/.dir_colors": "dotfiles/.dir_colors",
       "~/.gitconfig": "dotfiles/.gitconfig",
+      "~/.git/.gitignore.global": "dotfiles/.gitignore.global",
       "~/.scripts": "dotfiles/.scripts",
       "~/.ssh/config": "dotfiles/ssh-config.mac",
       "~/.ssh/config.core": "dotfiles/ssh-config.core",

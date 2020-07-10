@@ -8,3 +8,5 @@
 	name = Nathan Snyder
 [pull]
 	ff = only
+[core]
+	excludesfile = /Users/nathan/.git/.gitignore.global

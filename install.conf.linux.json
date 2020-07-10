@@ -18,6 +18,7 @@
     "link": {
       "~/.dir_colors": "dotfiles/.dir_colors",
       "~/.gitconfig": "dotfiles/.gitconfig",
+      "~/.git/.gitignore.global": "dotfiles/.gitignore.global",
       "~/.scripts": "dotfiles/.scripts",
       "~/.ssh/config": "dotfiles/ssh-config.linux",
       "~/.ssh/config.core": "dotfiles/ssh-config.core",

@@ -124,7 +124,7 @@ alias gull='git pull'
 
 # Common utilities.
 alias chreset='chmod 644'
-alias detach='tmux detach -P'
+alias goodbye='tmux detach -P'
 alias l='ls $LS_OPTIONS -AF'
 alias ls='ls $LS_OPTIONS'
 

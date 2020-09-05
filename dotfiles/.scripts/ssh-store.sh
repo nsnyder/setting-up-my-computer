@@ -37,6 +37,7 @@ ssh-add -l &>/dev/null
 if [ "$?" = 1 ]; then
     # The agent has no identities. Check if we want to add one.
     confirm "Would you like to add an SSH identity now? You can always add one later with ssh-store. [Y/n]" && \
+        eval "$(<~/.ssh-agent)" >/dev/null && \
         ssh-add -t 4h
 fi
 

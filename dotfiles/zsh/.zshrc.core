@@ -1,5 +1,5 @@
 ###########################################
-#        Start Tmux Automatically         #
+#        Start tmux Automatically         #
 ###########################################
 if [ "$TMUX_SESSION_NAME" = "" ]; then export TMUX_SESSION_NAME=default; fi
 if [ "$TMUX" = "" ]; then tmux attach -t $TMUX_SESSION_NAME || tmux new -s $TMUX_SESSION_NAME; fi

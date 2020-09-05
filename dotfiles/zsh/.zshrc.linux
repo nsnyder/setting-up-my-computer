@@ -2,7 +2,7 @@
 #       Setup Linux Specific Stuff        #
 ###########################################
 
-# Set up preferred colors.
+# Set up preferred colors!
 eval "$(dircolors ~/.dir_colors)"
 export TMUX_SESSION_NAME=pi
 
@@ -10,12 +10,14 @@ export TMUX_SESSION_NAME=pi
 #         Setup SSH Key Handling          #
 ###########################################
 
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 { eval `gpg-agent`; } &>/dev/null
 
 ###########################################
 #        Setup Core Configuration         #
 ###########################################
 source ~/.zshrc.core
+
+~/.scripts/ssh-store.sh
 
 alias ssh-store='~/.scripts/ssh-store.sh'

@@ -47,7 +47,14 @@
       [
         "if [[ -e ~/.tmux/plugins/tpm ]]; then git -C ~/.tmux/plugins/tpm pull; else git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi",
         "Setting up the tmux plugin manager."
-      ]
+      ],
+      {
+        "command": "sudo -v && sudo -n ./dotfiles/.scripts/sudo-linux.sh $(pwd)/dotfiles/.scripts/",
+        "description": "Installing Linux programs.",
+        "stderr": true,
+        "stdin": true,
+        "stdout": true
+      }
     ]
   }
 ]

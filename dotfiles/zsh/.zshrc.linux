@@ -5,6 +5,7 @@
 # Set up preferred colors.
 eval "$(dircolors ~/.dir_colors)"
 export TMUX_SESSION_NAME=pi
+export DOTBOT_INSTALL="install.conf.linux.json"
 
 ###########################################
 #         Setup SSH Key Handling          #

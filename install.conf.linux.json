@@ -35,7 +35,8 @@
   },
   {
     "create": [
-      "~/Downloads"
+      "~/Downloads",
+      "~/locast2plex"
     ]
   },
   {
@@ -48,8 +49,12 @@
         "if [[ -e ~/.tmux/plugins/tpm ]]; then git -C ~/.tmux/plugins/tpm pull; else git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi",
         "Setting up the tmux plugin manager."
       ],
+      [
+        "if [[ -e ~/locast2plex/git ]]; then git -C ~/locast2plex/git pull; else git clone git@github.com:tgorgdotcom/locast2plex.git ~/locast2plex/git; fi",
+        "Cloning locast2plex."
+      ],
       {
-        "command": "sudo -v && sudo -n ./dotfiles/.scripts/sudo-linux.sh $(pwd)/dotfiles/.scripts/",
+        "command": "sudo -v && sudo -n ./dotfiles/.scripts/sudo-linux.sh $(pwd)/dotfiles/.scripts/ /home/pi",
         "description": "Installing Linux programs.",
         "stderr": true,
         "stdin": true,

@@ -1,0 +1,18 @@
+proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p6  /boot           vfat    defaults          0       2
+/dev/mmcblk0p7  /               ext4    defaults,noatime  0       1
+
+# The commented line is known to be working.
+# //192.168.1.3/media /media/mycloud cifs credentials=/root/mycloud-credentials,uid=plex,x-systemd.automount,iocharset=utf8,file_mode=0777,dir_mode=0777,noperm 0 0
+
+# Map the media folder via NFS.
+192.168.1.3:/nfs/Media /media/mycloud nfs auto,sec=sys,intr,local_lock=posix,rw,nofail,proto=tcp 0 0
+# 192.168.1.3:/nfs/Media/PlexMetadata/Library /var/lib/plexmediaserver/Library nfs auto,sec=sys,intr,local_lock=posix,rw,nofail,proto=tcp 0 0
+
+# Map larger metadata folders via NFS.
+192.168.1.3:/nfs/Media/PlexMetadata/Media /var/lib/plexmediaserver/Library/Application\040Support/Plex\040Media\040Server/Media nfs auto,sec=sys,intr,local_lock=posix,rw,nofail,proto=tcp 0 0
+192.168.1.3:/nfs/Media/PlexMetadata/Metadata /var/lib/plexmediaserver/Library/Application\040Support/Plex\040Media\040Server/Metadata nfs auto,sec=sys,intr,local_lock=posix,rw,nofail,proto=tcp 0 0
+192.168.1.3:/nfs/Media/PlexMetadata/Cache /var/lib/plexmediaserver/Library/Application\040Support/Plex\040Media\040Server/Cache nfs auto,sec=sys,intr,local_lock=posix,rw,nofail,proto=tcp 0 0
+
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that

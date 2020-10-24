@@ -18,6 +18,8 @@ option, choose to boot up to the CLI (or desktop), without auto-login.
 
 ## Lastcast
 
+_Note: This has been working pretty inconsistently, but Plex has scrobbling, so this is less vital than it was previously._
+
 Follow the installation instructions [here](https://github.com/erik/lastcast).
 **You may need to restart the Raspberry Pi after installation to add `lastcast`
 to your PATH**. My Last.fm API credentials are stored on my external drive at
@@ -38,6 +40,17 @@ $ sudo systemctl enable lastcast --now
 ```
 
 For good measure, feel free to reboot the Pi: `sudo reboot now`
+
+## Network Shares
+
+My media is on my WD MyCloud Mirror device, which has an NFS network share enabled.
+
+Run:
+```
+$ sudo cp dotfiles/fstab /etc/fstab
+```
+
+For the Plex mounts, you should create empty folders in the expected locations for the relevant lines in fstab.
 
 ## Plex
 

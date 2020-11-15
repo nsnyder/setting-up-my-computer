@@ -2,7 +2,7 @@
 Description=Locast2Plex Service
 
 [Service]
-ExecStart=python /home/pi/locast2plex/git/main.py
+ExecStart=python3 /home/pi/locast2plex/git/main.py
 Restart=always
 EnvironmentFile=/etc/environment
 

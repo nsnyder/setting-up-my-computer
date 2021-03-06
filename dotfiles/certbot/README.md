@@ -1,5 +1,16 @@
 # Certbot
 
+Use the installation instructions provided by the EFF [here](https://certbot.eff.org/instructions).
+I've chosen to install with `snap`.
+
+```
+$ sudo apt install snapd
+$ snap install certbot --classic
+$ sudo certbot certonly --standalone
+```
+
+When prompted to setup you the domains, you a certificate should be created for `willowlane.snydern.com`.
+
 All services that need access to certificates should run in the webservices group and user.
 This includes Node-red and potentially other services.
 

@@ -18,9 +18,9 @@ $ brew install getantibody/tap/antibody
 
 Then run:
 ```sh
-$ antibody-build
-# antibody-build is a .zshrc alias for:
-# antibody bundle < ~/.zsh/.plugins.txt > ~/.zsh/.plugins.sh
+$ build-antibody
+# build-antibody is a .zshrc alias for:
+# build-antibody < ~/.zsh/.plugins.txt > ~/.zsh/.plugins.sh
 ```
 
 You'll also run the above command any time you update any `zsh` plugins. Restart `zsh`:

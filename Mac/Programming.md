@@ -72,7 +72,7 @@ To configure Mac OS to
 run this command:
 
 ```
-$ sh-add -K ~/.ssh/[your-private-key]
+$ ssh-add -K ~/.ssh/[your-private-key]
 ```
 
 Your SSH config should already be properly configured, but if not
@@ -83,7 +83,7 @@ copy `PlatformAgnostic/ssh-config` to `~/.ssh/config`.
 I'm currently using `tmux` for `zsh` session management.
 To get started, simply run:
 ```
-brew install tmux
+$ brew install tmux
 ```
 
 The config should already be linked to the one in this repo:

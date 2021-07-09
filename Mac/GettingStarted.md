@@ -6,24 +6,14 @@ when you start up your Mac. Start with [Brew](#brew). Then run:
 ./install # This will use dotbot to install dotfiles as specified in install.conf.json
 ```
 
-## Antibody
+## Antigen
 
-[Antibody](http://getantibody.github.io/) is a plugin manager for ZSH
-(MacOS's default shell as of Catalina). If you've chosen to forgo
-[Bash](#bash), go ahead and run this:
+> Note: I was previously using Antibody. That is now discontinued.
 
-```sh
-$ brew install getantibody/tap/antibody
-```
+[Antigen](https://github.com/zsh-users/antigen) is a plugin manager for ZSH
+(MacOS's default shell as of Catalina). It is installed automatically with all other brews.
 
-Then run:
-```sh
-$ build-antibody
-# build-antibody is a .zshrc alias for:
-# build-antibody < ~/.zsh/.plugins.txt > ~/.zsh/.plugins.sh
-```
-
-You'll also run the above command any time you update any `zsh` plugins. Restart `zsh`:
+Any time you update any `zsh` plugins (`~/.zsh/.plugins.zsh`), restart `zsh`:
 ```bash
 source ~/.zshrc
 ```
@@ -34,7 +24,7 @@ source ~/.zshrc
 It works in most shells, but only for files you've already navigated to. Install it,
 then it should work with either of the existing configurations for either Bash or ZSH.
 
-```
+```bash
 $ brew install autojump
 ```
 
@@ -42,17 +32,17 @@ $ brew install autojump
 
 MacOS ships with a 2007 (!!!) version of Bash. We should upgrade it.
 
-```
+```bash
 $ brew install bash
 ```
 
 You'll need to make this new `bash` the default shell. Add this line to `/etc/shells`:
-```
+```bash
 /usr/local/bin/bash
 ```
 
 And then change the default shell as follows:
-```
+```bash
 $ chsh -s /usr/local/bin/bash
 ```
 
@@ -66,7 +56,7 @@ Voila!
 ## Bash Completion
 
 Start by installing it (the proper [Bash](#bash) version is required for this step):
-```
+```bash
 $ brew install bash-completion@2
 ```
 

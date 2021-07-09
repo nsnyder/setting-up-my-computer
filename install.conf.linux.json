@@ -42,6 +42,10 @@
   {
     "shell": [
       [
+        "curl -L git.io/antigen > ~/.zsh/antigen.zsh",
+        "Installing the Antigen package manager."
+      ],
+      [
         "git submodule update --init --recursive",
         "Installing submodules."
       ],

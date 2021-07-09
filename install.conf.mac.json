@@ -29,7 +29,7 @@
       "~/.tmux/.line.os.sh": "dotfiles/.tmux/.line.os-specific.sh",
       "~/.tmux/.remote.conf": "dotfiles/.tmux/.remote.conf",
       "~/.tmux.conf": "dotfiles/.tmux.conf",
-      "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
+      "~/.zsh/.plugins.zsh": "dotfiles/zsh/.plugins.zsh",
       "~/.zshrc.core": "dotfiles/zsh/.zshrc.core",
       "~/.zshrc": "dotfiles/zsh/.zshrc.mac"
     }
@@ -41,6 +41,10 @@
   },
   {
     "shell": [
+      [
+        "curl -L git.io/antigen > ~/.zsh/antigen.zsh",
+        "Installing the Antigen package manager."
+      ],
       [
         "git submodule update --init --recursive",
         "Installing submodules."

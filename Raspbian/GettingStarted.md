@@ -129,3 +129,17 @@ a password (which you shouldn't), remove the file that enables that like so:
 ```
 sudo rm 010_pi-nopasswd
 ```
+
+# Telegram
+
+There's kinda a lot to unpack here, but note that information about the existing webhook can be seen here:
+https://api.telegram.org/bot<TOKEN>/getWebhookInfo
+
+You can get info about the state of your certificate with the @CanOfWormsBot
+
+The appropriate URL to set your webhook is:
+https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://willowlane.snydern.com:8443/bot<TOKEN>
+
+And use this for an explainer of the setup: https://core.telegram.org/bots/webhooks#testing-your-bot-with-updates
+
+Also, make sure that port 8443 is forwarded to the Node-Red server (also port 8443) to ensure that things keep working.

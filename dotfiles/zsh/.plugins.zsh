@@ -11,8 +11,6 @@ if [[ ! -n $ZSH_BOOTED ]] then;
   antigen bundle brymck/print-alias
   antigen bundle zsh-users/zsh-autosuggestions
 
-  #antigen apply
-
   # Setup syntax highlighting last (necessary, except for substring search for some reason).
   antigen bundle zsh-users/zsh-syntax-highlighting
   antigen bundle zsh-users/zsh-history-substring-search

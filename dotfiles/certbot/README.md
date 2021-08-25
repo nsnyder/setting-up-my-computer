@@ -18,3 +18,5 @@ This includes Node-red and potentially other services.
 It will run after each renewal to ensure that the webservices group/user has the appropriate
 permissions to be able to access all certs.
 
+Note: Be sure to ensure the server is accessible at port 80 during renewal.
+

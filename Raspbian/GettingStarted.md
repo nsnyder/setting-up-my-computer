@@ -52,6 +52,11 @@ $ sudo cp dotfiles/fstab /etc/fstab
 
 For the Plex mounts, you should create empty folders in the expected locations for the relevant lines in fstab.
 
+## Node-Red
+
+Install/update Node-Red (and associated dependencies like npm and node) with the instructions
+[here](https://nodered.org/docs/getting-started/raspberrypi).
+
 ## Plex
 
 Follow [this guide](https://pimylifeup.com/raspberry-pi-plex-server/), with a few modifications.

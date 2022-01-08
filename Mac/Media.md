@@ -21,3 +21,40 @@ You can do this like so:
 ```
 $ eyeD3 --remove-frame PRIV ./
 ```
+
+## Ripping VOBSUB to SRT
+
+Use MakeMKV to rip the discs. Then open Subler. In Subler:
+File > Open > Select Only Subtitle Track > Add > File > Save
+
+Then use FFMPEG to convert the *.m4v file to *.srt. For example:
+
+```bash
+$ ffmpeg -i S07E10\ The\ Final.m4v S07E10\ The\ Final.en.srt 
+```
+
+### Common Replacements
+
+```
+_ => .
+```
+
+```
+II => "
+```
+
+```
+I => ' (Check "SI" instead of just "I")
+```
+
+```
+0K => OK
+```
+
+```
+0H => OH
+```
+
+```
+J’ => ♪
+```

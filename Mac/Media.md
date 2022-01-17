@@ -33,6 +33,12 @@ Then use FFMPEG to convert the *.m4v file to *.srt. For example:
 $ ffmpeg -i S07E10\ The\ Final.m4v S07E10\ The\ Final.en.srt 
 ```
 
+In order to run the above for all *.m4v files at once, the following can be used:
+
+```bash
+$ for FILENM in *.m4v; do ffmpeg -i $FILENM ${FILENM/.m4v/}.en.srt; done;
+```
+
 ### Common Replacements
 
 ```
@@ -44,7 +50,7 @@ II => "
 ```
 
 ```
-I => ' (Check "SI" instead of just "I")
+I => ' (Check "SI " instead of just "I")
 ```
 
 ```
@@ -57,4 +63,12 @@ I => ' (Check "SI" instead of just "I")
 
 ```
 J’ => ♪
+```
+
+```
+N’ => ♪♪
+```
+
+```
+| => I
 ```

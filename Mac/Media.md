@@ -22,7 +22,7 @@ You can do this like so:
 $ eyeD3 --remove-frame PRIV ./
 ```
 
-## Ripping VOBSUB to SRT
+## Ripping Subtitles from VOBSUB to SRT
 
 Use MakeMKV to rip the discs. Then open Subler. In Subler:
 File > Open > Select Only Subtitle Track > Add > File > Save
@@ -54,14 +54,6 @@ I => ' (Check "SI " instead of just "I")
 ```
 
 ```
-0K => OK
-```
-
-```
-0H => OH
-```
-
-```
 J’ => ♪
 ```
 
@@ -71,4 +63,9 @@ N’ => ♪♪
 
 ```
 | => I
+```
+
+This regex replace.
+```
+([^\d:])0([^\d:]) => $1O$2
 ```

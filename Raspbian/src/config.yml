@@ -1,0 +1,23 @@
+tunnel: aeecd534-c837-4319-9e22-5c0b7449ee1c
+credentials-file: /home/pi/.cloudflared/aeecd534-c837-4319-9e22-5c0b7449ee1c.json
+
+ingress:
+  # Plex
+  - hostname: media.snydern.com
+    service: https://localhost:32400
+    originRequest:
+      noTLSVerify: true
+  # Node-Red
+  - hostname: node-red.snydern.com
+    service: https://localhost:1880
+    originRequest:
+      noTLSVerify: true
+      # originServerName: willowlane.snydern.com
+  # Telegram Webhooks
+  - hostname: telegram.snydern.com
+    service: https://localhost:8443
+    originRequest:
+      noTLSVerify: true
+      # originServerName: willowlane.snydern.com
+  # Fallback
+  - service: http_status:404

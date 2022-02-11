@@ -16,30 +16,21 @@ To turn off auto-login, run:
 Then, navigate to option 3 (Boot Options), and under the "Desktop / CLI"
 option, choose to boot up to the CLI (or desktop), without auto-login.
 
-## Lastcast
+## cloudflared
 
-_Note: This has been working pretty inconsistently, but Plex has scrobbling, so this is less vital than it was previously._
+Used the download from here: https://docs.pi-hole.net/guides/dns/cloudflared/#armhf-architecture-32-bit-raspberry-pi (actual source is Cloudflare's Github)
 
-Follow the installation instructions [here](https://github.com/erik/lastcast).
-**You may need to restart the Raspberry Pi after installation to add `lastcast`
-to your PATH**. My Last.fm API credentials are stored on my external drive at
-`/Nathan/Important Documents/lastcast-details.txt`.
+Work through [setting up your first tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide#1-download-and-install-cloudflared). I went with the name "wormhole" for mine. Be sure to set it up to [run as a service](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/run-tunnel/run-as-service).
 
-Copy `lastcast.service` from this folder to `/etc/systemd/system/lastcast.service`
-Then run this command:
-`chmod +x lastcast.service`
-Copy your (modified) `.lastcast.toml` to `/home/pi/.lastcast.toml`
-Upgrade PyChromecast (this may give a warning, but it should still work):
+Use the config.yml in `Raspbian/src` to set up your apps. This should be set in `~/.cloudflared`, and
+will eventually be moved to `/etc/cloudflared/config.yml`. Might be good to update these
+so that they don't have to ignore TLS, but that's not necessary.
+
+Setup DNS entries as follows. Might be easier to delete the existing DNS entries first.
+You may need to add an entry for each app in the config.yml.
 ```
-$ pip3 install --upgrade PyChromecast==4.2
+$ cloudflared tunnel route dns wormhole media.snydern.com
 ```
-
-Enable the service with:
-```
-$ sudo systemctl enable lastcast --now
-```
-
-For good measure, feel free to reboot the Pi: `sudo reboot now`
 
 ## Network Shares
 
@@ -143,7 +134,7 @@ https://api.telegram.org/bot<TOKEN>/getWebhookInfo
 You can get info about the state of your certificate with the @CanOfWormsBot
 
 The appropriate URL to set your webhook is:
-https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://willowlane.snydern.com:8443/bot<TOKEN>
+https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://telegram.snydern.com/bot<TOKEN>
 
 And use this for an explainer of the setup: https://core.telegram.org/bots/webhooks#testing-your-bot-with-updates
 

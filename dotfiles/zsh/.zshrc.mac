@@ -16,3 +16,9 @@ source ~/.zshrc.core
 ###########################################
 alias ls='gls $LS_OPTIONS'
 alias l='gls $LS_OPTIONS -AF'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/nathan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nathan/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/nathan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nathan/google-cloud-sdk/completion.zsh.inc'; fi

@@ -28,15 +28,14 @@
       "~/.tmux/.line.os.sh": "dotfiles/.tmux/.line.os-specific.sh",
       "~/.tmux/.remote.conf": "dotfiles/.tmux/.remote.conf",
       "~/.tmux.conf": "dotfiles/.tmux.conf",
-      "~/.zsh/.plugins.txt": "dotfiles/zsh/.plugins.txt",
+      "~/.zsh/.plugins.zsh": "dotfiles/zsh/.plugins.zsh",
       "~/.zshrc.core": "dotfiles/zsh/.zshrc.core",
       "~/.zshrc": "dotfiles/zsh/.zshrc.linux"
     }
   },
   {
     "create": [
-      "~/Downloads",
-      "~/locast2plex"
+      "~/Downloads"
     ]
   },
   {
@@ -56,14 +55,7 @@
       [
         "if [[ -e ~/locast2plex/git ]]; then git -C ~/locast2plex/git pull; else git clone git@github.com:tgorgdotcom/locast2plex.git ~/locast2plex/git; fi",
         "Cloning locast2plex."
-      ],
-      {
-        "command": "sudo -v && sudo -n ./dotfiles/.scripts/sudo-linux.sh $(pwd)/dotfiles/.scripts/ /home/pi",
-        "description": "Installing Linux programs.",
-        "stderr": true,
-        "stdin": true,
-        "stdout": true
-      }
+      ]
     ]
   }
 ]

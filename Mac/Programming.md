@@ -4,7 +4,7 @@ This file should contain a variety of setups that I use for programming.
 
 ## Git
 
-All my commits should be signed.
+All commits to Github should be signed. Azure Devops doesn't currently support GPG.
 
 Follow [these instructions](https://help.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key)
 to create a new GPG key, and [these instructions](https://stackoverflow.com/questions/3174537/how-to-transfer-pgp-privatepublic-key-to-another-computer) to copy the key to a different machine.

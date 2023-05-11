@@ -19,6 +19,12 @@ if [ "$TMUX" = "" ]; then tmux attach -t $TMUX_SESSION_NAME || tmux new -s $TMUX
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=247"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+###########################################
+#               Add to PATH               #
+###########################################
+path+=('/home/nathan/.local/bin')
+export PATH
+
 # Set "hardcore mode" for zsh-you-should-use.
 # export YSU_HARDCORE=1
 
@@ -106,6 +112,9 @@ _comp_options+=(globdots)
 
 # Aliases:
 
+# Make thefuck more polite.
+eval $(thefuck --alias crap)
+
 # Git.
 alias ga='git add .'
 alias gb='git branch'
@@ -113,6 +122,7 @@ alias gbd='git branch -D'
 alias gc='git commit -a'
 alias gch='git checkout'
 alias gd='git diff'
+alias gl='git log'
 alias gp='git push'
 alias gs='git status'
 alias gull='git pull'

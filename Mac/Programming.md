@@ -8,6 +8,7 @@ All commits to Github should be signed. Azure Devops doesn't currently support G
 
 Follow [these instructions](https://help.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key)
 to create a new GPG key, and [these instructions](https://stackoverflow.com/questions/3174537/how-to-transfer-pgp-privatepublic-key-to-another-computer) to copy the key to a different machine.
+It's probably best just to make new keys on a machine-by-machine basis so they can be revoked as necessary.
 
 ## Iterm2
 

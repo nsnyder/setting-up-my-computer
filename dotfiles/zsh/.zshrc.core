@@ -126,6 +126,7 @@ alias gl='git log'
 alias gp='git push'
 alias gs='git status'
 alias gull='git pull'
+alias cs='clear && git status'
 
 # Common utilities.
 alias chreset='chmod 644'

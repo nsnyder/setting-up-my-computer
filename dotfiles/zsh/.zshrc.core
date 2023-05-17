@@ -81,13 +81,9 @@ else
   export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
 fi
 
-TYPEWRITTEN_SYMBOL=%(?:🍸 ❯:🔥 ❯)
+# TYPEWRITTEN_SYMBOL=%(?:🍸 ❯:🔥 ❯)
 # TYPEWRITTEN_SYMBOL=%(?:🎶 ❯:🔥 ❯)
-
-# This is currently bugged in Windows Terminal / Tmux, because the coffee
-# emoji is double-width and not handled well.
-# Found here: https://github.com/microsoft/terminal/issues/4029#issuecomment-656421906
-# TYPEWRITTEN_SYMBOL=%(?:☕️❯ : 🔥❯)
+TYPEWRITTEN_SYMBOL=%(?:☕ ❯:🔥 ❯)
 TYPEWRITTEN_DISABLE_RETURN_CODE=true
 
 # Import plugins.

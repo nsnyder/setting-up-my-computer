@@ -81,7 +81,7 @@ else
   export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
 fi
 
-TYPEWRITTEN_SYMBOL=%(?:🍸 ❯: 🔥 ❯)
+TYPEWRITTEN_SYMBOL=%(?:🍸 ❯:🔥 ❯)
 # TYPEWRITTEN_SYMBOL=%(?:🎶 ❯: 🔥 ❯)
 # TYPEWRITTEN_SYMBOL=%(?:☕ ❯: 🔥 ❯)
 TYPEWRITTEN_DISABLE_RETURN_CODE=true

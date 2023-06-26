@@ -4,44 +4,100 @@
 
 # Set up preferred colors.
 eval "$(dircolors ~/.dir_colors)"
-export TMUX_SESSION_NAME=pi
+export TMUX_SESSION_NAME=TRS
 export DOTBOT_INSTALL="install.conf.linux.json"
+export TRS_PROJECTS_DIRECTORY="${HOME}/projects/trs"
 
 ###########################################
 #         Setup SSH Key Handling          #
 ###########################################
 
+# This requires the keychain package to be installed on your Linux distro.
+eval `keychain --eval --timeout 240 id_rsa`
+
 export GPG_TTY=$(tty)
-{ eval `gpg-agent`; } &>/dev/null
+# { eval `gpg-agent`; } &>/dev/null
 
 # The following snippet was taken from:
 #   https://stackoverflow.com/questions/40549332/how-to-check-if-ssh-agent-is-already-running-in-bash
 # Ensure agent is running.
-ssh-add -l &>/dev/null
-if [ "$?" = 2 ]; then
-    # Could not open a connection to your authentication agent.
+# ssh-add -l &>/dev/null
+# if [ "$?" = 2 ]; then
+#     # Could not open a connection to your authentication agent.
 
-    # Load stored agent connection info.
-    test -r ~/.ssh-agent && \
-        eval "$(<~/.ssh-agent)" >/dev/null
+#     # Load stored agent connection info.
+#     test -r ~/.ssh-agent && \
+#         eval "$(<~/.ssh-agent)" >/dev/null
 
-    ssh-add -l &>/dev/null
-    if [ "$?" = 2 ]; then
-        # Start agent and store agent connection info.
-        (umask 066; ssh-agent > ~/.ssh-agent)
-        eval "$(<~/.ssh-agent)" >/dev/null
-    fi
-fi
+#     ssh-add -l &>/dev/null
+#     if [ "$?" = 2 ]; then
+#         # Start agent and store agent connection info.
+#         (umask 066; ssh-agent > ~/.ssh-agent)
+#         eval "$(<~/.ssh-agent)" >/dev/null
+#     fi
+# fi
 
-# Load identities.
-ssh-add -l &>/dev/null
-if [ "$?" = 1 ]; then
-    # The agent has no identities.
-    # Time to add one.
-    ssh-add -t 4h
-fi
+# # Load identities.
+# ssh-add -l &>/dev/null
+# if [ "$?" = 1 ]; then
+#     # The agent has no identities.
+#     # Time to add one.
+#     ssh-add -t 4h
+# fi
 
 ###########################################
 #        Setup Core Configuration         #
 ###########################################
 source ~/.zshrc.core
+
+dbash-trs () {
+    echo "Running: docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash"
+    docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash
+}
+
+rebuild-api () {
+    echo "Rebuilding the API docker container..."
+    docker-compose -f $TRS_PROJECTS_DIRECTORY/api/docker-compose.yml down
+    docker-compose -f $TRS_PROJECTS_DIRECTORY/api/docker-compose.yml up --build -d
+}
+
+start-trs () {
+    echo "Running: $TRS_PROJECTS_DIRECTORY/www/bin/start-trs.sh"
+    $TRS_PROJECTS_DIRECTORY/www/bin/start-trs.sh
+}
+
+stop-trs () {
+    echo "Running: docker stop $(docker ps -aq)"
+    docker stop $(docker ps -aq)
+}
+
+alias restart-trs="stop-trs && start-trs"
+# Use these aliases to highlight just "error".
+# Also matches end of line so all lines are included in egrep.
+# egrep is basically grep, but also match regular expressions.
+# alias logs-api="docker logs --follow api_app_1 | egrep 'error|$'"
+# alias logs-trs="docker logs --follow www_trs_1 | egrep 'error|$'"
+
+# Use these to color the whole line.
+alias logs-api="docker logs --follow api_app_1 | egrep '|.*error.*'"
+alias logs-trs="docker logs --follow www_trs_1 | egrep '|.*error.*'"
+
+new-pr () {
+    echo "Running: ~/bin/new-pr.sh"
+    ~/bin/new-pr.sh
+}
+
+mount-ssh-to-trs-docker () {
+    echo "Mounting ~/.ssh/id_rsa_docker to the TRS docker container"
+    docker exec -ti www_local.therestaurantstore.com_1 sh -c "mkdir /root/.ssh && cp /root/.ssh-mount/id_rsa_docker /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa";
+}
+
+fix-docker-permissions () {
+    $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh
+}
+
+# Setup Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+eval $(thefuck --alias crap)

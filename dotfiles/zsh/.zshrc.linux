@@ -14,7 +14,9 @@ export TRS_PROJECTS_DIRECTORY="${HOME}/projects/trs"
 
 # This requires the keychain package to be installed on your Linux distro.
 # This should also work with GPG.
-eval `keychain --eval --timeout 240 id_rsa`
+# eval `keychain --eval --timeout 240 --noinerit id_rsa`
+alias keychain-add="keychain --eval --timeout 240 --noinherit id_rsa"
+keychain-add
 
 export GPG_TTY=$(tty)
 # { eval `gpg-agent`; } &>/dev/null

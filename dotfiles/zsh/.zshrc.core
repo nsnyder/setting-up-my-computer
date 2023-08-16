@@ -114,7 +114,7 @@ _comp_options+=(globdots)
 # Aliases:
 
 # Make thefuck more polite.
-eval $(thefuck --alias crap)
+eval $(thefuck --alias oof)
 
 # Git.
 alias ga='git add .'

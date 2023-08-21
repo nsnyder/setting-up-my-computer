@@ -134,6 +134,7 @@ alias chreset='chmod 644'
 alias goodbye='tmux detach -P'
 alias l='ls $LS_OPTIONS -AF'
 alias ls='ls $LS_OPTIONS'
+alias f5='source ~/.zshrc'
 
 # Presentation mode.
 # alias present='export PRESENT=$(pwd)'

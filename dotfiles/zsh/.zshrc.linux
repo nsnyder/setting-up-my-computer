@@ -6,7 +6,7 @@
 eval "$(dircolors ~/.dir_colors)"
 export TMUX_SESSION_NAME=TRS
 export DOTBOT_INSTALL="install.conf.linux.json"
-export TRS_PROJECTS_DIRECTORY="${HOME}/projects/trs"
+export TRS_PROJECTS_DIRECTORY="${HOME}/repos/trs"
 
 ###########################################
 #         Setup SSH Key Handling          #
@@ -51,6 +51,8 @@ export GPG_TTY=$(tty)
 ###########################################
 source ~/.zshrc.core
 
+# Each of these should echo the command that they're going to run,
+# and then run it, so that the user knows what's happening.
 dbash-trs () {
     echo "Running: docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash"
     docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash
@@ -81,17 +83,17 @@ alias restart-trs="stop-trs && start-trs"
 
 # Use these to color the whole line.
 alias logs-api="docker logs --follow api_app_1 | egrep '|.*error.*'"
-alias logs-trs="docker logs --follow www_trs_1 | egrep '|.*error.*'"
+alias logs-trs="tail -f storage/logs/laravel.log | egrep --color '|.*ERROR.*'"
 
 new-pr () {
     echo "Running: ~/bin/new-pr.sh"
     ~/bin/new-pr.sh
 }
 
-mount-ssh-to-trs-docker () {
-    echo "Mounting ~/.ssh/id_rsa_docker to the TRS docker container"
-    docker exec -ti www_local.therestaurantstore.com_1 sh -c "mkdir /root/.ssh && cp /root/.ssh-mount/id_rsa_docker /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa";
-}
+# mount-ssh-to-trs-docker () {
+#     echo "Mounting ~/.ssh/id_rsa_docker to the TRS docker container"
+#     docker exec -ti www_local.therestaurantstore.com_1 sh -c "mkdir /root/.ssh && cp /root/.ssh-mount/id_rsa_docker /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa";
+# }
 
 fix-docker-permissions () {
     $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh
@@ -100,5 +102,3 @@ fix-docker-permissions () {
 # Setup Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
-eval $(thefuck --alias crap)

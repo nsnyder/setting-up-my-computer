@@ -97,7 +97,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 setopt PROMPT_SUBST
 # Change directories quicker.
 setopt AUTO_CD
-# Use dvorak for spelling completion.
+# Autocorrect, using dvorak for spelling completion.
+setopt CORRECTALL
 setopt DVORAK
 
 # Tab completion:

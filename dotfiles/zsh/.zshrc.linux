@@ -83,6 +83,7 @@ alias restart-trs="stop-trs && start-trs"
 
 # Use these to color the whole line.
 alias logs-api="docker logs --follow api_app_1 | egrep '|.*error.*'"
+alias logs-api-refresh="docker logs --follow api-refresh_api_1 | egrep --color '|.*ERROR.*'"
 alias logs-trs="tail -f storage/logs/laravel.log | egrep --color '|.*ERROR.*'"
 
 new-pr () {
@@ -96,9 +97,15 @@ new-pr () {
 # }
 
 fix-docker-permissions () {
-    $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh
+    $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh "$1" "$2"
 }
 
 # Setup Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Only restart Docker on the initial boot.
+if [[ ! -n $ZSH_BOOTED ]] then;
+  export ZSH_BOOTED=1
+  restart-trs
+fi

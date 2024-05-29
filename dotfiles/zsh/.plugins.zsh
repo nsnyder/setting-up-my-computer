@@ -10,6 +10,8 @@ if [[ ! -n $ZSH_BOOTED ]] then;
   antigen bundle MichaelAquilina/zsh-you-should-use
   antigen bundle brymck/print-alias
   antigen bundle zsh-users/zsh-autosuggestions
+  # antigen bundle g-plane/zsh-yarn-autocompletions
+  # antigen bundle --branch=main grigorii-zander/zsh-npm-scripts-autocomplete
 
   # Setup syntax highlighting last (necessary, except for substring search for some reason).
   antigen bundle zsh-users/zsh-syntax-highlighting

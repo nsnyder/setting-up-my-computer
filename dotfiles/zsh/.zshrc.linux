@@ -49,32 +49,36 @@ export GPG_TTY=$(tty)
 ###########################################
 #        Setup Core Configuration         #
 ###########################################
+export DO_NOT_START_TMUX=1
 source ~/.zshrc.core
 
 # Each of these should echo the command that they're going to run,
 # and then run it, so that the user knows what's happening.
 dbash-trs () {
-    echo "Running: docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash"
-    docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash
+  echo "Running: docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash"
+  docker exec -ti -w //var//www//html//www.therestaurantstore.com www_trs_1 bash
 }
 
 rebuild-api () {
-    echo "Rebuilding the API docker container..."
-    docker-compose -f $TRS_PROJECTS_DIRECTORY/api/docker-compose.yml down
-    docker-compose -f $TRS_PROJECTS_DIRECTORY/api/docker-compose.yml up --build -d
+  echo "Rebuilding the API docker container..."
+  docker-compose -f $TRS_PROJECTS_DIRECTORY/api/docker-compose.yml down
+  docker-compose -f $TRS_PROJECTS_DIRECTORY/api/docker-compose.yml up --build -d
 }
 
 start-trs () {
-    echo "Running: $TRS_PROJECTS_DIRECTORY/www/bin/start-trs.sh"
-    $TRS_PROJECTS_DIRECTORY/www/bin/start-trs.sh
+  echo "Running: $TRS_PROJECTS_DIRECTORY/www/bin/start-trs.sh"
+  $TRS_PROJECTS_DIRECTORY/www/bin/start-trs.sh
 }
 
 stop-trs () {
-    echo "Running: docker stop $(docker ps -aq)"
-    docker stop $(docker ps -aq)
+  echo "Running: docker stop $(docker ps -aq)"
+  docker stop $(docker ps -aq)
 }
 
-alias restart-trs="stop-trs && start-trs"
+restart-trs () {
+  echo "Running: stop-trs && start-trs"
+  stop-trs && start-trs
+}
 # Use these aliases to highlight just "error".
 # Also matches end of line so all lines are included in egrep.
 # egrep is basically grep, but also match regular expressions.
@@ -87,8 +91,8 @@ alias logs-api-refresh="docker logs --follow api-refresh_api_1 | egrep --color '
 alias logs-trs="tail -f storage/logs/laravel.log | egrep --color '|.*ERROR.*'"
 
 new-pr () {
-    echo "Running: ~/bin/new-pr.sh"
-    ~/bin/new-pr.sh
+  echo "Running: ~/bin/new-pr.sh"
+  ~/bin/new-pr.sh
 }
 
 # mount-ssh-to-trs-docker () {
@@ -97,15 +101,18 @@ new-pr () {
 # }
 
 fix-docker-permissions () {
-    $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh "$1" "$2"
+  $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh "$1" "$2"
 }
 
 # Setup Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# Only restart Docker on the initial boot.
-if [[ ! -n $ZSH_BOOTED ]] then;
-  export ZSH_BOOTED=1
+# Only restart Docker if Tmux isn't connected.
+# This should ensure it only runs on the initial boot.
+if [[ "$TMUX" = "" ]] then;
   restart-trs
 fi
+
+# Wait until Docker does it's thing, then auto-launch Tmux.
+autolaunch_tmux

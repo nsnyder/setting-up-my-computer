@@ -9,7 +9,15 @@ ANTIGEN_MUTEX=false
 #        Start tmux Automatically         #
 ###########################################
 if [ "$TMUX_SESSION_NAME" = "" ]; then export TMUX_SESSION_NAME=default; fi
-if [ "$TMUX" = "" ]; then tmux attach -t $TMUX_SESSION_NAME || tmux new -s $TMUX_SESSION_NAME; fi
+
+autolaunch_tmux() {
+  if [ "$TMUX" = "" ]; then
+    tmux attach -t $TMUX_SESSION_NAME || tmux new -s $TMUX_SESSION_NAME
+  fi
+}
+
+# Start Tmux unless the user has specified not to.
+if [ "$DO_NOT_START_TMUX" = "" ]; then autolaunch_tmux; fi
 
 ###########################################
 #            Export Variables             #

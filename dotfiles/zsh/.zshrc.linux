@@ -104,9 +104,14 @@ fix-docker-permissions () {
   $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh "$1" "$2"
 }
 
-# Setup Volta
+# Setup Volta and .NET
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export DOTNET_ROOT='/usr/share/dotnet'
+
+path+=("$VOLTA_HOME"'/bin')
+path+=("$DOTNET_ROOT")
+path+=("$HOME"'/.dotnet/tools')
+export PATH
 
 # Only restart Docker if Tmux isn't connected.
 # This should ensure it only runs on the initial boot.

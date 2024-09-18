@@ -110,8 +110,8 @@ setopt PROMPT_SUBST
 # Change directories quicker.
 setopt AUTO_CD
 # Autocorrect, using dvorak for spelling completion.
-setopt CORRECTALL
-setopt DVORAK
+unsetopt CORRECTALL
+# setopt DVORAK
 
 # Tab completion:
 zstyle ':completion:*' menu select

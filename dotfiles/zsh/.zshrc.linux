@@ -104,6 +104,9 @@ fix-docker-permissions () {
   $TRS_PROJECTS_DIRECTORY/www/bin/fix-docker-permissions-wsl.sh "$1" "$2"
 }
 
+# Add Windows User directory to environment
+export WIN_HOME='/mnt/c/Users/nsnyder/'
+
 # Setup Volta and .NET
 export VOLTA_HOME="$HOME/.volta"
 export DOTNET_ROOT='/usr/share/dotnet'

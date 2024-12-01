@@ -45,3 +45,7 @@ fi
 #        Setup Core Configuration         #
 ###########################################
 source ~/.zshrc.core
+
+# fnm
+export PATH="/home/nathan/.local/share/fnm:$PATH"
+eval "`fnm env`"

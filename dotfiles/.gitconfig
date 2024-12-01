@@ -3,7 +3,7 @@
 [commit]
 	gpgsign = true
 [user]
-	signingkey = A9428D3ED91D15EE
+	signingkey = nathan@snydern.com
 	email = nathan@snydern.com
 	name = Nathan Snyder
 [pull]

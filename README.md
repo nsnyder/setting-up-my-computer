@@ -5,3 +5,5 @@ about my computer setup. It's separated into sections for different OSs.
 Either Mac, Windows, or any other OS. Right now, I'm primarily running on Mac.
 
 Feel free to copy from this to make your setup the best it can be!
+
+Updated 2025-03-10

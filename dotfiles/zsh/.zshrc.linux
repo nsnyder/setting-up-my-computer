@@ -14,7 +14,9 @@ export TRS_PROJECTS_DIRECTORY="${HOME}/repos/trs"
 
 # This requires the keychain package to be installed on your Linux distro.
 # This should also work with GPG.
-eval `keychain --eval --timeout 240 --noinherit id_rsa`
+# eval `keychain --eval --timeout 240 --noinherit id_rsa`
+/usr/local/bin/keychain ~/.ssh/id_rsa --timeout 240
+source ~/.keychain/NSNYDER-LPT-sh
 
 export GPG_TTY=$(tty)
 # { eval `gpg-agent`; } &>/dev/null
@@ -49,7 +51,10 @@ export GPG_TTY=$(tty)
 ###########################################
 #        Setup Core Configuration         #
 ###########################################
+
+# Don't start Tmux automatically in the core config. We'll start it once Docker is ready.
 export DO_NOT_START_TMUX=1
+
 source ~/.zshrc.core
 
 # Each of these should echo the command that they're going to run,
@@ -116,11 +121,10 @@ path+=("$DOTNET_ROOT")
 path+=("$HOME"'/.dotnet/tools')
 export PATH
 
-# Only restart Docker if Tmux isn't connected.
+# Only restart Docker if Tmux isn't connected and we're not in VS Code.
 # This should ensure it only runs on the initial boot.
-if [[ "$TMUX" = "" ]] then;
+if [[ "$TMUX" = "" && "$TERM_PROGRAM" != "vscode" ]]; then
   restart-trs
+  # Wait until Docker does its thing, then auto-launch Tmux.
+  autolaunch_tmux
 fi
-
-# Wait until Docker does it's thing, then auto-launch Tmux.
-autolaunch_tmux

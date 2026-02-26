@@ -1,5 +1,8 @@
+# Contains instructions for Co-pilot per directory.
+.github/
 .history/
 .idea/
 .sonarlint/
 *.code-workspace
 prod-build.sh
+.editorconfig

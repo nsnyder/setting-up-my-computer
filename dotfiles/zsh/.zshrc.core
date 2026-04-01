@@ -138,6 +138,78 @@ alias gs='git status'
 alias gull='git pull'
 alias cs='clear && git status'
 
+# Co-pilot-created function to temporarily stash files.
+# Use this instead of `git checkout -- .` in case you change your mind.
+git_stash_temp() {
+    # Default to 30 minutes if no arguments are provided.
+    local minutes=30
+    local custom_message=""
+
+    # Parse named arguments.
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -t|--time) minutes="$2"; shift 2 ;;
+            -m|--message) custom_message="$2"; shift 2 ;;
+            --help)
+                echo "Usage: git_stash_temp [OPTIONS]"
+                echo ""
+                echo "Temporarily stash changes and automatically drop the stash after a set time."
+                echo ""
+                echo "Options:"
+                echo "  -t, --time <minutes>    Minutes until the stash is auto-dropped (default: 30)"
+                echo "  -m, --message <msg>     Custom message to include in the stash description"
+                echo "      --help              Show this help message"
+                return 0
+                ;;
+            *) echo "Unknown option: $1"; return 1 ;;
+        esac
+    done
+
+    # Calculate the wall-clock time when the stash will be dropped,
+    # so it can be embedded in the stash message and echoed to the user.
+    local delete_time
+    delete_time=$(date -d "+${minutes} minutes" '+%H:%M:%S')
+
+    # Build the stash message, optionally including the user-provided message.
+    local stash_message="Temporarily stashed. This will be deleted at ${delete_time}."
+    if [[ -n "$custom_message" ]]; then
+        stash_message="${custom_message} — ${stash_message}"
+    fi
+
+    # Create the stash with a descriptive message including the scheduled drop time.
+    git stash push -m "$stash_message" || return 1
+
+    # Capture the stash's commit hash immediately. We use this later to find
+    # the correct stash entry even if other stashes are pushed/popped in the meantime.
+    local stash_hash branch stash_date log_file
+    stash_hash=$(git rev-parse stash@{0})
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    stash_date=$(date '+%Y-%m-%d %H:%M:%S')
+    log_file="$HOME/.git/stashes"
+
+    # Append a record of this stash to the log file, then trim it to 100 lines.
+    mkdir -p "$(dirname "$log_file")"
+    echo "${stash_date} | branch: ${branch} | hash: ${stash_hash} | message: ${custom_message}" >> "$log_file"
+    tail -100 "$log_file" > "${log_file}.tmp" && mv "${log_file}.tmp" "$log_file"
+
+    # Launch a background subshell that sleeps for the requested duration,
+    # then looks up the stash by its commit hash and drops it.
+    # disown detaches the job so it survives terminal closure.
+    (
+        sleep $((minutes * 60))
+        ref=$(git stash list --format='%gd %H' | awk -v h="$stash_hash" '$2==h{print $1; exit}')
+        if [ -n "$ref" ]; then
+            git stash drop "$ref" > /dev/null 2>&1
+        fi
+    ) &
+    disown
+
+    echo "Stashed. Auto-drops in ${minutes} min at ${delete_time} (PID $!)."
+    echo -e "View stash log: \e[34mcat ${log_file}\e[0m"
+    echo -e "Even after deletion, you can recover it with: \e[34mgit stash apply [hash]\e[0m"
+}
+alias gst='git_stash_temp'
+
 # Common utilities.
 alias chreset='chmod 644'
 alias goodbye='tmux detach -P'

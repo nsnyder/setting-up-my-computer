@@ -117,7 +117,7 @@ To use your existing SSH key to login to your Raspberry Pi, run:
 $ ssh-copy-id pi@{ip_address}
 ```
 
-# Sudo
+## Sudo
 
 If you don't want the `pi` user to be able to run `sudo` commands without
 a password (which you shouldn't), remove the file that enables that like so:
@@ -126,7 +126,7 @@ a password (which you shouldn't), remove the file that enables that like so:
 sudo rm 010_pi-nopasswd
 ```
 
-# Telegram
+## Telegram
 
 There's kinda a lot to unpack here, but note that information about the existing webhook can be seen here:
 https://api.telegram.org/bot<TOKEN>/getWebhookInfo
@@ -139,3 +139,13 @@ https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://telegram.snydern.com/
 And use this for an explainer of the setup: https://core.telegram.org/bots/webhooks#testing-your-bot-with-updates
 
 Also, make sure that port 8443 is forwarded to the Node-Red server (also port 8443) to ensure that things keep working.
+
+## `thefuck`
+
+Currently, `thefuck` is broken. To install it, run the following:
+```
+$ sudo apt install pipx
+$ pipx install thefuck
+$ pipx inject thefuck setuptools
+$ pipx inject thefuck imp2importlib
+```

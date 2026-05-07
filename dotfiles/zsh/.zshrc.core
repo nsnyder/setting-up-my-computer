@@ -20,6 +20,17 @@ autolaunch_tmux() {
 if [ "$DO_NOT_START_TMUX" = "" ]; then autolaunch_tmux; fi
 
 ###########################################
+#           Inspirational Quote           #
+###########################################
+_show_quote() {
+  local quotes_file="${QUOTES_FILE:-$HOME/.zsh/.quotes}"
+  [[ -f "$quotes_file" ]] || return
+  local line
+  line=$(grep -v '^\s*$' "$quotes_file" | shuf -n 1)
+  print "\e[3;32m${line}\e[0m\n"
+}
+
+###########################################
 #            Export Variables             #
 ###########################################
 
@@ -273,3 +284,6 @@ clear
 
 # Render colors when the shell starts. (Useful when testing colors.)
 # ~/projects/setting-up-my-computer/dotfiles/color-viewer.sh
+
+# Finish with a quote, if the user has set up their quotes file.
+_show_quote

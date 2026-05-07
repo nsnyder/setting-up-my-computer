@@ -29,6 +29,7 @@
       "~/.tmux/.remote.conf": "dotfiles/.tmux/.remote.conf",
       "~/.tmux.conf": "dotfiles/.tmux.conf",
       "~/.zsh/.plugins.zsh": "dotfiles/zsh/.plugins.zsh",
+      "~/.zsh/.quotes": "dotfiles/zsh/.quotes",
       "~/.zshrc.core": "dotfiles/zsh/.zshrc.core",
       "~/.zshrc": "dotfiles/zsh/.zshrc.linux"
     }

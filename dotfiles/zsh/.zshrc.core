@@ -83,7 +83,7 @@ precmd_functions=()
 
 export ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%} ✘"
 
-if [[ -n $SSH_CLIENT ]] then;
+if [[ -n $SSH_CLIENT ]]; then
   export TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
 else
   export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
@@ -104,6 +104,15 @@ export LS_OPTIONS="--color=auto"
 export LSCOLORS='GxfxcxcxBxcaeaababagag'
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# ---------------------------------------------------------------------------
+# Bind History Substring Search to Up/Down arrows.
+# $terminfo values are terminal-agnostic and survive zsh-syntax-highlighting.
+# ---------------------------------------------------------------------------
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+setopt HIST_FIND_NO_DUPS
 
 # Run the prompts.
 setopt PROMPT_SUBST
@@ -215,7 +224,7 @@ alias chreset='chmod 644'
 alias goodbye='tmux detach -P'
 alias l='ls $LS_OPTIONS -AF'
 alias ls='ls $LS_OPTIONS'
-alias f5='source ~/.zshrc'
+alias f5='exec zsh'
 
 # Presentation mode.
 # alias present='export PRESENT=$(pwd)'

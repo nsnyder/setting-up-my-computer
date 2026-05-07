@@ -1,6 +1,6 @@
-if [[ ! -n $ZSH_BOOTED ]] then;
+if [[ ! -n $ZSH_BOOTED ]]; then
   # Only apply plugins once.
-  export ZSH_BOOTED=1
+  ZSH_BOOTED=1
 
   # Nice plugins. :)
   antigen bundle wting/autojump bin

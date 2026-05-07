@@ -26,7 +26,11 @@ _show_quote() {
   local quotes_file="${QUOTES_FILE:-$HOME/.zsh/.quotes}"
   [[ -f "$quotes_file" ]] || return
 
-  # Expand quotes based on weights into a temporary array
+  # Only show a quote 20% of the time unless --always is passed
+  if [[ "$1" != "--always" ]]; then
+    (( RANDOM % 5 )) && return
+  fi
+
   local expanded_quotes=()
   while IFS='|' read -r weight quote || [[ -n "$weight" ]]; do
     # Default weight to 1 if not explicitly set.
@@ -44,6 +48,9 @@ _show_quote() {
   random_quote=$(printf "%s\n" "${expanded_quotes[@]}" | shuf -n 1)
   print "\e[3;32m${random_quote}\e[0m\n"
 }
+
+# Motivation command!
+alias motivation="_show_quote --always"
 
 ###########################################
 #            Export Variables             #

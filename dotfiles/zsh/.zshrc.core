@@ -139,7 +139,7 @@ HISTFILE=~/.zsh/.history
 precmd_functions+=(_show_presenting)
 
 # Wipe out any noise from startup. Antigen in particular is noisy.
-clear
+# clear
 
 # Render colors when the shell starts. (Useful when testing colors.)
 # ~/projects/setting-up-my-computer/dotfiles/color-viewer.sh

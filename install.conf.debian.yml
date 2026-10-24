@@ -4,7 +4,7 @@
 # allows comments. Dotbot picks the parser from the file extension.
 #
 # Usage, from the repo root:
-#   export DOTBOT_INSTALL=install.conf.debian.yml
+#   export DOTBOT_INSTALL=install.conf.debian.yaml
 #   ./install
 #
 # Unlike install.conf.linux.json (Raspberry Pi), this config does not install
@@ -88,3 +88,15 @@
       # the linked ~/.tmux.conf. Safe to re-run: installed plugins are skipped.
       command: ~/.tmux/plugins/tpm/bin/install_plugins
       description: Installing tmux plugins.
+    -
+      # Install the cron jobs (see Debian/cron/crontab). Run through bash so it
+      # works even if the file's executable bit was lost. It only replaces its
+      # own marked block, so it is safe to re-run, and it backs up the existing
+      # crontab first. The cron package comes from the apt step above.
+      # Jobs for repos that are not cloned yet (claude-one-offs, plex-docker)
+      # will log errors in ~/.local/state/cron until those are set up.
+      command: bash ./Debian/cron/install-cron.sh
+      description: Installing cron jobs.
+      stdin: true
+      stdout: true
+      stderr: true

@@ -199,8 +199,11 @@ in this repo.
 
 ## Cron jobs
 
+The dotbot install (`install.conf.debian.yaml`) runs this automatically, so the
+steps below are only needed to re-install the jobs or change them later.
+
 ```bash
-# Install cron if it is missing.
+# Install cron if it is missing (the dotbot install already does this).
 sudo apt install cron
 
 # Go to the cron folder (schedules are already filled in).

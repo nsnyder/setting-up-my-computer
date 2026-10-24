@@ -1,9 +1,6 @@
 # Job definitions for the Debian server. Installed by ./install-cron.sh,
 # which wraps everything in this file in a managed block in your crontab.
 #
-# The first three jobs use the schedules from the previous crontab; the Plex
-# backup is new. WordPress backups are NOT here: a Docker container does them.
-#
 # A job line that starts with the token REPLACE_SCHEDULE is a placeholder:
 # install-cron.sh refuses to install while any uncommented one remains, so a
 # guessed schedule can never go live by accident.

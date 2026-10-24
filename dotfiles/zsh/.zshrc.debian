@@ -1,0 +1,58 @@
+###########################################
+#      Setup Debian Specific Stuff        #
+###########################################
+
+# Set up preferred colors.
+eval "$(dircolors ~/.dir_colors)"
+# Name of the tmux session that opens automatically.
+export TMUX_SESSION_NAME=cxg
+# Config that "./install" uses when run from this machine.
+export DOTBOT_INSTALL="install.conf.debian.yml"
+
+###########################################
+#         Setup SSH Key Handling          #
+###########################################
+
+# Tell gpg which terminal to ask for the passphrase on.
+export GPG_TTY=$(tty)
+# Start the gpg agent quietly.
+{ eval `gpg-agent`; } &>/dev/null
+
+# The following snippet was taken from:
+#   https://stackoverflow.com/questions/40549332/how-to-check-if-ssh-agent-is-already-running-in-bash
+# Ensure agent is running.
+ssh-add -l &>/dev/null
+if [ "$?" = 2 ]; then
+    # Could not open a connection to your authentication agent.
+
+    # Load stored agent connection info.
+    test -r ~/.ssh-agent && \
+        eval "$(<~/.ssh-agent)" >/dev/null
+
+    ssh-add -l &>/dev/null
+    if [ "$?" = 2 ]; then
+        # Start agent and store agent connection info.
+        (umask 066; ssh-agent > ~/.ssh-agent)
+        eval "$(<~/.ssh-agent)" >/dev/null
+    fi
+fi
+
+# Load identities.
+ssh-add -l &>/dev/null
+if [ "$?" = 1 ]; then
+    # The agent has no identities.
+    # Time to add one. The key is forgotten after four hours.
+    ssh-add -t 4h
+fi
+
+###########################################
+#        Setup Core Configuration         #
+###########################################
+source ~/.zshrc.core
+
+# fnm (Node version manager), if installed. $HOME replaces the hardcoded path.
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi

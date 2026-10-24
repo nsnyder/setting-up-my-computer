@@ -9,4 +9,4 @@
 [pull]
 	ff = only
 [core]
-	excludesfile = /Users/nathan/.git/.gitignore.global
+	excludesfile = ~/.git/.gitignore.global

@@ -1,0 +1,42 @@
+# Job definitions for the Debian server. Installed by ./install-cron.sh,
+# which wraps everything in this file in a managed block in your crontab.
+#
+# The first three jobs use the schedules from the previous crontab; the Plex
+# backup is new. WordPress backups are NOT here: a Docker container does them.
+#
+# A job line that starts with the token REPLACE_SCHEDULE is a placeholder:
+# install-cron.sh refuses to install while any uncommented one remains, so a
+# guessed schedule can never go live by accident.
+
+# Run every job with bash instead of the default /bin/sh.
+SHELL=/bin/bash
+# Cron's default PATH is tiny; make sure docker, flock, and friends are found.
+PATH=/usr/local/bin:/usr/bin:/bin
+# Do not try to mail job output; each job logs to ~/.local/state/cron instead.
+MAILTO=""
+
+# --- Podcast grabber (repo: claude-one-offs) ---------------------------------
+# Runs daily at 06:00.
+# flock -n skips this run if the previous one is still going.
+# The venv's python is called directly, so no "source activate" is needed.
+# Output (stdout and stderr) is appended to a per-job log file.
+0 6 * * * flock -n /tmp/podcast_grabber.lock $HOME/projects/claude-one-offs/venv/bin/python $HOME/projects/claude-one-offs/podcast_grabber/podcast_grabber.py >> $HOME/.local/state/cron/podcast_grabber.log 2>&1
+
+# --- Plex description sync (repo: claude-one-offs) ---------------------------
+# Runs daily at 07:00, an hour after the podcast grabber has fetched new episodes.
+0 7 * * * flock -n /tmp/sync_plex_descriptions.lock $HOME/projects/claude-one-offs/venv/bin/python $HOME/projects/claude-one-offs/sync_plex_descriptions/sync_plex_descriptions.py >> $HOME/.local/state/cron/sync_plex_descriptions.log 2>&1
+
+# --- Phone photo sorter ------------------------------------------------------
+# Moves files from "Unorganized" into YYYY/MM/DD folders on the NAS.
+# Runs at the top of every hour.
+# Both paths are in double quotes because of the space and apostrophe.
+# The first access also triggers the systemd NFS automount for /media/mycloud.
+0 * * * * flock -n /tmp/move_media_files.lock $HOME/projects/setting-up-my-computer/Raspbian/src/move_media_files.sh "/media/mycloud/Pictures/Nathan's Phone/Unorganized/" "/media/mycloud/Pictures/Nathan's Phone" >> $HOME/.local/state/cron/move_media_files.log 2>&1
+
+# --- Plex appdata backup (repo: plex-docker) ----------------------------------
+# Runs daily at 03:00. This time is a default chosen when the job was enabled;
+# change the first five fields if another time suits you better.
+# The script is run from inside the repo because it uses relative paths.
+# If this logs permission errors, move the job to root's crontab
+# (sudo crontab -e) because Plex writes some files this user cannot read.
+0 3 * * * flock -n /tmp/plex_appdata_backup.lock bash -c 'cd "$HOME/projects/plex-docker" && ./appdata-backup.sh' >> $HOME/.local/state/cron/plex_appdata_backup.log 2>&1

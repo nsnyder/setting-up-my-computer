@@ -1,0 +1,90 @@
+# Dotbot config for the Debian server.
+#
+# YAML is used instead of JSON (the other install.conf.* files) because YAML
+# allows comments. Dotbot picks the parser from the file extension.
+#
+# Usage, from the repo root:
+#   export DOTBOT_INSTALL=install.conf.debian.yml
+#   ./install
+#
+# Unlike install.conf.linux.json (Raspberry Pi), this config does not install
+# locast2plex, does not touch NetworkManager or dhcpcd, and does not hardcode
+# /home/pi.
+
+# Defaults that apply to every link below.
+- defaults:
+    link:
+      # Replace an existing symlink that points somewhere else.
+      relink: true
+      # Create missing parent directories (for example ~/.ssh and ~/.tmux).
+      create: true
+
+# Remove dead symlinks (ones pointing into this repo) from these directories.
+- clean:
+    - '~'
+    - '~/.tmux'
+    - '~/.zsh'
+
+# Symlink the dotfiles into place.
+- link:
+    # Terminal colors for ls.
+    '~/.dir_colors': dotfiles/.dir_colors
+    # Git settings, including commit signing.
+    '~/.gitconfig': dotfiles/.gitconfig
+    # Global gitignore; the path matches excludesfile in .gitconfig.
+    '~/.git/.gitignore.global': dotfiles/.gitignore.global
+    # Helper scripts.
+    '~/.scripts': dotfiles/.scripts
+    # SSH config: the Linux file just includes config.core.
+    '~/.ssh/config': dotfiles/ssh-config.linux
+    # Shared SSH hosts (the NAS).
+    '~/.ssh/config.core': dotfiles/ssh-config.core
+    # tmux theme and status line pieces.
+    '~/.tmux/.colors.conf': dotfiles/.tmux/.colors.conf
+    '~/.tmux/.line.conf': dotfiles/.tmux/.line.conf
+    '~/.tmux/.line.linux.conf': dotfiles/.tmux/.line.linux.conf
+    '~/.tmux/.line.os.sh': dotfiles/.tmux/.line.os-specific.sh
+    '~/.tmux/.remote.conf': dotfiles/.tmux/.remote.conf
+    '~/.tmux.conf': dotfiles/.tmux.conf
+    # zsh plugin list and the shared zsh config.
+    '~/.zsh/.plugins.zsh': dotfiles/zsh/.plugins.zsh
+    '~/.zshrc.core': dotfiles/zsh/.zshrc.core
+    # Debian-specific zsh config.
+    '~/.zshrc': dotfiles/zsh/.zshrc.debian
+
+# Create directories that other setup steps expect.
+- create:
+    - '~/Downloads'
+    - '~/projects'
+
+# Commands to run after linking.
+- shell:
+    -
+      # Runs first: later steps need tmux, git, and curl from this list.
+      # Install apt packages. sudo -v asks for the password up front, and
+      # stdin/stdout/stderr are passed through so prompts are visible.
+      command: sudo -v && sudo -n ./dotfiles/.scripts/sudo-debian.sh
+      description: Installing Debian packages.
+      stdin: true
+      stdout: true
+      stderr: true
+    -
+      # Install the antigen plugin manager. Fetched from its repository
+      # because the old git.io shortlink service was retired.
+      command: mkdir -p ~/.zsh && curl -fsSL https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh -o ~/.zsh/antigen.zsh
+      description: Installing the Antigen package manager.
+    -
+      # Fetch any git submodules (dotbot itself).
+      command: git submodule update --init --recursive
+      description: Installing submodules.
+    -
+      # Clone the tmux plugin manager, or update it if already present.
+      command: if [ -e ~/.tmux/plugins/tpm ]; then git -C ~/.tmux/plugins/tpm pull; else git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi
+      description: Setting up the tmux plugin manager.
+    -
+      # Install the plugins listed in ~/.tmux.conf (resurrect, continuum, battery,
+      # prefix-highlight). This is the same as pressing prefix + Shift+I inside
+      # tmux, but it works from a plain shell. It needs tpm (cloned above) and
+      # the linked ~/.tmux.conf. Safe to re-run: installed plugins are skipped.
+      command: ~/.tmux/plugins/tpm/bin/install_plugins
+      description: Installing tmux plugins.

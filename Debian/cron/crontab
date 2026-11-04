@@ -31,9 +31,11 @@ MAILTO=""
 0 * * * * flock -n /tmp/move_media_files.lock $HOME/projects/setting-up-my-computer/Raspbian/src/move_media_files.sh "/media/mycloud/Pictures/Nathan's Phone/Unorganized/" "/media/mycloud/Pictures/Nathan's Phone" >> $HOME/.local/state/cron/move_media_files.log 2>&1
 
 # --- Plex appdata backup (repo: plex-docker) ----------------------------------
-# Runs daily at 03:00. This time is a default chosen when the job was enabled;
-# change the first five fields if another time suits you better.
+# Runs at 03:00 on the 14th and 28th of every month.
+# This schedule was chosen by the user; change the first five fields to adjust it.
+# Cron fields, in order: minute, hour, day-of-month, month, day-of-week.
+# Here: minute 0, hour 3, days 14 and 28, every month, any weekday.
 # The script is run from inside the repo because it uses relative paths.
 # If this logs permission errors, move the job to root's crontab
 # (sudo crontab -e) because Plex writes some files this user cannot read.
-0 3 * * * flock -n /tmp/plex_appdata_backup.lock bash -c 'cd "$HOME/projects/plex-docker" && ./appdata-backup.sh' >> $HOME/.local/state/cron/plex_appdata_backup.log 2>&1
+0 3 14,28 * * flock -n /tmp/plex_appdata_backup.lock bash -c 'cd "$HOME/projects/plex-docker" && ./appdata-backup.sh' >> $HOME/.local/state/cron/plex_appdata_backup.log 2>&1
